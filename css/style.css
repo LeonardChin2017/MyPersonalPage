@@ -1,3 +1,4 @@
+/*********************Tag Selectors*****************************/
 <style>body {
   background-color: white;
 }
@@ -11,14 +12,22 @@ hr {
 }
 
 h1{
-  color:#90caf9
+  color:#90caf9;
+  font-size: 100px;
 }
 
 h2{
   color:#90caf9
 }
 
-h3{
-  color:#90caf9
+/*********************Class Selectors*****************************/
+.font1{
+  font-size: 50px;
+  color:green;
+}
+
+/*********************ID Selectors*****************************/
+#heading{
+  color:blue;
 }
 </style>
