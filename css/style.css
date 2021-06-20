@@ -1,6 +1,11 @@
 /*********************Tag Selectors*****************************/
-<style>body {
+body{
   background-color: white;
+  margin: 0px;
+}
+
+div{
+  background-color:#b3e5fc ;
 }
 
 hr {
@@ -14,6 +19,7 @@ hr {
 h1{
   color:#90caf9;
   font-size: 100px;
+  margin-top: 0px;
 }
 
 h2{
@@ -30,4 +36,3 @@ h2{
 #heading{
   color:blue;
 }
-</style>
