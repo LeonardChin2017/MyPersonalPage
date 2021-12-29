@@ -13,7 +13,7 @@
 
   <body>
 
-    <div class="jumbotron jumbotron-fluid #607d8b blue-grey">
+    <div class="jumbotron jumbotron-fluid #607d8b blue-grey" style = "margin-bottom: 0px;">
       <div class="container">
         <h1 class="display-4 text-center MyName">CHIN HUNG VUI </h1>
         <p style = "font-size:0.5em; line-height: 120%; padding-top: 25px;" class="lead text-center white-text text-darken-2"> Embedded Software Developer | Software System Integrator </p>
@@ -28,6 +28,31 @@
       </div>
     </div>
 
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container-fluid">
+          <div class="navbar-collapse collapse" id="navbar10">
+              <ul class="navbar-nav mx-auto nav-justify text-center w-100">
+                  <li class="nav-item">
+                      <a class="nav-link" onclick='setIframeSrc("education.html")' href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" onclick='setIframeSrc("projects.html")' href="#">Education</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Working Experience</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Projects</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <iframe src="projects.html" class = "iframe_layout" id="MainPageContainer"></iframe>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="scripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

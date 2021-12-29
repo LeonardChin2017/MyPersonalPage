@@ -15,4 +15,34 @@
   border-radius: 50%;
 }
 /*********************Body*****************************/
+/* Style the navigation menu */
+.nav-item {
+    flex: 1 1 100%;
+    min-width: 0.1px;
+}
+
+.nav-link {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navbar {
+    background-color: #389FCE;
+    height: 50px;
+}
+
+.iframe_layout{
+    border: none;
+    height:    100%;
+    width:     100%;
+    position: fixed;
+}
+
 /*********************Footer*****************************/
