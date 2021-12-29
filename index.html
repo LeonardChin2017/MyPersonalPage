@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' type='text/css'>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
   </head>
 
   <body>
 
     <div class="jumbotron jumbotron-fluid #607d8b blue-grey" style = "margin-bottom: 0px;">
       <div class="container">
-        <h1 class="display-4 text-center MyName">CHIN HUNG VUI </h1>
+        <h1 class="display-4 text-center">CHIN HUNG VUI </h1>
         <p style = "font-size:0.5em; line-height: 120%; padding-top: 25px;" class="lead text-center white-text text-darken-2"> Embedded Software Developer | Software System Integrator </p>
         <p style = "font-size:0.5em; line-height: 100%;" class="lead text-center white-text text-darken-2"> Bachelor of Engineering (Hons) Electrical-Electronics @ University Technology of Malaysia (UTM) </p>
       </div>
@@ -25,31 +25,32 @@
         <a class="btn btn-circle mr-3 d-inline-flex justify-content-center align-items-center" role="button" href="https://www.linkedin.com/in/chin-hung-vui-a94719155/"> <i class="align-middle fab fa-linkedin-in fa-sm"></i> </a>
         <a class="btn btn-circle mr-3 d-inline-flex justify-content-center align-items-center" role="button" href="https://github.com/LeonardChin2017"> <i class="align-middle fab fa-github fa-sm"></i> </a>
         <a class="btn btn-circle mr-3 d-inline-flex justify-content-center align-items-center" role="button" href="mailto:leonardchin2017@gmail.com"><i class="align-middle far fa-envelope fa-sm"></i> </a>
+        <a class="btn btn-circle mr-3 d-inline-flex justify-content-center align-items-center" role="button" href="resource/resume/resume.pdf"><i class="align-middle fas fa-download fa-sm"></i> </a>
       </div>
     </div>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <nav class="navbar navbar-expand navbar-dark bg-dark" style = "padding-left: 0px; padding-right: 0px;">
       <div class="container-fluid">
           <div class="navbar-collapse collapse" id="navbar10">
               <ul class="navbar-nav mx-auto nav-justify text-center w-100">
                   <li class="nav-item">
-                      <a class="nav-link" onclick='setIframeSrc("education.html")' href="#">About</a>
+                      <a class="nav-link border-right" onclick='setIframeSrc("about.html")' href="#">About</a>
+                  </li>
+                  <li class="nav-item border-right">
+                      <a class="nav-link" onclick='setIframeSrc("education.html")' href="#">Education</a>
+                  </li>
+                  <li class="nav-item border-right">
+                      <a class="nav-link" onclick='setIframeSrc("experience.html")' href="#">Working Experience</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" onclick='setIframeSrc("projects.html")' href="#">Education</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Working Experience</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Projects</a>
+                      <a class="nav-link" onclick='setIframeSrc("projects.html")' href="#">Projects</a>
                   </li>
               </ul>
           </div>
       </div>
     </nav>
 
-    <iframe src="projects.html" class = "iframe_layout" id="MainPageContainer"></iframe>
+    <iframe src="about.html" class = "iframe_layout" id="MainPageContainer" scrolling="yes"></iframe>
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="scripts/script.js"></script>

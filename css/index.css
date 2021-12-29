@@ -2,13 +2,10 @@
 *{
   font-size:1.5em; 
   line-height:2.2em; 
+  font-family: "Poppins", sans-serif;
 }
 
 /*********************Header*****************************/
-.MyName{
-  font-family: "serif";
-}
-
 .btn-circle {
   height: 40x;
   width: 40px;
@@ -18,13 +15,14 @@
 /* Style the navigation menu */
 .nav-item {
     flex: 1 1 100%;
-    min-width: 0.1px;
+    min-width: 0.5px;
+    /* border-style: solid; */
 }
 
 .nav-link {
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: auto;
     color: white;
     line-height: 30px;
     
@@ -42,7 +40,8 @@
     border: none;
     height:    100%;
     width:     100%;
-    position: fixed;
+    position: absolute;
+    overflow: hidden;
 }
 
 /*********************Footer*****************************/
