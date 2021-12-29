@@ -12,7 +12,6 @@
   </head>
 
   <body>
-
     <div class="jumbotron jumbotron-fluid #607d8b blue-grey" style = "margin-bottom: 0px;">
       <div class="container">
         <h1 class="display-4 text-center header_name">CHIN HUNG VUI </h1>
@@ -49,8 +48,15 @@
           </div>
       </div>
     </nav>
+    
+    <iframe src="about.html" class = "iframe_layout" id="MainPageContainer" scrolling="no" ></iframe>
 
-    <iframe src="about.html" class = "iframe_layout" id="MainPageContainer" scrolling="yes"></iframe>
+    <script>
+      var iframe = document.getElementById("MainPageContainer");
+      iframe.onload = function(){
+          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="scripts/script.js"></script>

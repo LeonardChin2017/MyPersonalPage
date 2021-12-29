@@ -5,6 +5,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* html, body, iframe { height: 100%; }
+html { overflow: hidden; } */
+
 /*********************Header*****************************/
 .btn-circle {
   height: 40x;
@@ -43,11 +46,11 @@
 }
 
 .iframe_layout{
-    border: none;
-    height:    100%;
+    /* border: solid ; */
     width:     100%;
-    position: absolute;
+    /* position: fixed;
     overflow: hidden;
+    height: 200px; */
 }
 
 /*********************Footer*****************************/
