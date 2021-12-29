@@ -11,6 +11,12 @@
   width: 40px;
   border-radius: 50%;
 }
+
+@media (max-width: 576px) {
+  .header_name {
+    font-size:1.0em; 
+  }
+}
 /*********************Body*****************************/
 /* Style the navigation menu */
 .nav-item {
