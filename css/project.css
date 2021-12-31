@@ -91,6 +91,8 @@ h5 {
     /* Location of the box */
     left: 0;
     top: 0;
+    min-height: 100%;
+    height: auto;
     width: 100%;
     /* Full width */
     height: 100%;
