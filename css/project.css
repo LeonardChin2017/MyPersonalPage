@@ -37,6 +37,11 @@ h5 {
     font-size: 13px;
 }
 
+.link_text{
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
 .para {
     font-size: 16px
 }
@@ -65,8 +70,21 @@ h5 {
     transform: translateY(-50%);
   }
 
-  a:hover {color: white;}
-  a { color: white; text-decoration: none;}
+  a:hover {color: rgb(248, 16, 16);}
+  a { color: rgb(32, 18, 223); text-decoration: none;}
+
+  .btn {
+    height: 25px;
+  }
+  
+  .line-height-example {
+     line-height: 10px;
+     min-height: 10px;
+  }
+  a {
+   display:inline-flex !important;
+   align-items:center !important;
+  }
 
  /* Modal Image Styling*/
  /* Style the Image Used to Trigger the Modal */
