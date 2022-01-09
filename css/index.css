@@ -99,6 +99,7 @@ a {
   z-index: 10;
 }
 
+
 .nav-wrapper {
   margin: auto;
   text-align: right;
@@ -110,6 +111,7 @@ a {
   } @media(max-width: 638px) {
       .nav-wrapper {
         width: 100%;
+        text-align: center;
       }
     } 
 
@@ -125,15 +127,14 @@ a {
 } 
   @media(max-width: 640px) {
     #navbar ul {
-      float: center;
-      text-align: center;
+      display: table;
+      margin: auto;
+      float: none;
     }
   } 
   @media(max-width: 444px) {
     #navbar ul {
-      float: center;
-      text-align: center;
-      font-size: 55%;
+      font-size: 70%;
     }
   } 
   @media(orientation: landscape) {
