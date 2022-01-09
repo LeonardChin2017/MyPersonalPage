@@ -12,9 +12,9 @@
   </head>
 
   <body>
-    <div class="jumbotron jumbotron-fluid" style = "margin-bottom: 0px; background-image: url(resource/images/fancy_header_long.png);  background-repeat: no-repeat; background-size: contain; background-size: 100% 100%;">
+    <div class="jumbotron jumbotron-fluid header_text" style = "margin-bottom: 0px; background-image: url(resource/images/fancy_header_long.png);  background-repeat: no-repeat; background-size: contain; background-size: 100% 100%;">
       <div class="container">
-        <h1 class="display-4 text-center header_name threeDtext">CHIN HUNG VUI </h1>
+        <h1 class="display-4 text-center header_name threeDtext" style="margin-top: 50px;">CHIN HUNG VUI </h1>
         <p style = "font-size:0.5em; line-height: 120%; padding-top: 25px;" class="lead text-center white-text text-darken-2"> Embedded Software Developer | Software System Integrator </p>
         <p style = "font-size:0.5em; line-height: 1.6;" class="lead text-center white-text text-darken-2"> Bachelor of Engineering (Hons) Electrical-Electronics @ University Technology of Malaysia (UTM) </p>
       </div>
@@ -27,8 +27,21 @@
         <a class="btn btn-circle mr-3 d-inline-flex justify-content-center align-items-center #eceff1 blue-grey lighten-5 btn-change" role="button" href="resource/resume/resume.pdf" target="_blank"><i class="align-middle fas fa-download fa-sm"></i> </a>
       </div>
     </div>
-
-    <nav class="navbar navbar-expand navbar-dark bg-dark" style = "padding-left: 0px; padding-right: 0px;">
+    
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Links -->
+        <ul id="menu">
+          <li><a onclick='setIframeSrc("about.html")'>About</a></li><!--
+       --><li><a onclick='setIframeSrc("education.html")'>Education</a></li><!--
+       --><li><a onclick='setIframeSrc("experience.html")'>Experience</a></li><!--
+       --><li><a  onclick='setIframeSrc("projects.html")'>Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+   
+  
+    <!-- <nav class="navbar navbar-expand navbar-dark bg-dark" style = "padding-left: 0px; padding-right: 0px;">
       <div class="container-fluid">
           <div class="navbar-collapse collapse" id="navbar10">
               <ul class="navbar-nav mx-auto nav-justify text-center w-100">
@@ -47,7 +60,7 @@
               </ul>
           </div>
       </div>
-    </nav>
+    </nav> -->
     
     <iframe src="about.html" class = "iframe_layout" id="MainPageContainer" scrolling="no" ></iframe>
 
