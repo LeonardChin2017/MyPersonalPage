@@ -1,5 +1,6 @@
 *{
-    font-family: "Poppins", sans-serif;
+  font-family:"Playfair Display", serif; 
+  font-size: 14px;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 }
 
 .technologies{
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .custom_btn{
@@ -34,11 +35,11 @@ h5 {
 }
 
 .body_text{
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .link_text{
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 5px;
 }
 
