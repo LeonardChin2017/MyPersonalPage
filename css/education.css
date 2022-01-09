@@ -101,7 +101,7 @@
 }
 @media screen and (max-width:576px){
     .main-timeline{ padding: 0; }
-    .main-timeline .timeline{ margin: 0 0 23px; }
+    .main-timeline .timeline{ margin: 10px 0 23px; }
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(even) .timeline-content{
         padding: 100px 20px 20px;
