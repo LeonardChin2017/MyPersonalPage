@@ -15,7 +15,7 @@
 .main-timeline .timeline-content{
     color: #555;
     min-height: 130px;
-    padding: 20px 0 20px 60px;
+    padding: 20px 0 20px 170px;
     border-bottom: 5px solid #e7e7e7;
     border-left: 5px solid #e7e7e7;
     display: block;
@@ -26,8 +26,8 @@
     content: '';
     height: 60px;
     width: 60px;
-    border-top: 35px solid #01859F;
-    border-left: 35px solid #15AAA3;
+    border-top: 35px solid #DF3E2E;
+    border-left: 35px solid #DF3E2E;
     transform: translateY(-50%);
     position: absolute;
     left: -20px;
@@ -36,7 +36,6 @@
 .main-timeline .timeline-icon{ font-size: 25px; }
 .main-timeline .timeline-year{
     color: #fff;
-    background: linear-gradient(to right bottom,#01859F,#15AAA3);
     font-size: 33px;
     font-weight: 700;
     text-align: center;
@@ -44,16 +43,16 @@
     height: 100px;
     width: 100px;
     margin: 0 0 5px;
-    border-radius: 50%;
     transform: translateY(-50%);
     position: absolute;
     left: 55px;
     top: 50%;
 }
 .main-timeline .title{
-    color: #01859F;
+    color: #DF3E2E;
     font-size: 22px;
     font-weight: 700;
+    text-transform: uppercase;
     margin: 0 0 5px;
 }
 .main-timeline .description{
@@ -63,7 +62,7 @@
 }
 .main-timeline .timeline:nth-child(even){ float: left; }
 .main-timeline .timeline:nth-child(even) .timeline-content{
-    padding: 20px 60px 20px 0;
+    padding: 20px 170px 20px 0;
     border-left: none;
     border-right: 5px solid #e7e7e7;
 }
@@ -79,17 +78,17 @@
 }
 .main-timeline .timeline:nth-child(4n+2) .timeline-content:before{ border-color: #01859F; }
 .main-timeline .timeline:nth-child(4n+2) .timeline-year{
-    background: linear-gradient(to right bottom,#01859F,#15AAA3);
+    /* background: linear-gradient(to right bottom,#01859F,#15AAA3); */
 }
 .main-timeline .timeline:nth-child(4n+2) .title{ color: #01859F; }
 .main-timeline .timeline:nth-child(4n+3) .timeline-content:before{ border-color: #0159C0; }
 .main-timeline .timeline:nth-child(4n+3) .timeline-year{
-    background: linear-gradient(to right bottom,#0159C0,#0481CB);
+    /* background: linear-gradient(to right bottom,#0159C0,#0481CB); */
 }
 .main-timeline .timeline:nth-child(4n+3) .title{ color: #0159C0; }
 .main-timeline .timeline:nth-child(4n+4) .timeline-content:before{ border-color: #9C3EB6; }
 .main-timeline .timeline:nth-child(4n+4) .timeline-year{
-    background: linear-gradient(to right bottom,#9C3EB6,#B163AB);
+    /* background: linear-gradient(to right bottom,#9C3EB6,#B163AB); */
 }
 .main-timeline .timeline:nth-child(4n+4) .title{ color: #9C3EB6; }
 @media screen and (max-width:767px){
