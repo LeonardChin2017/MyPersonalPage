@@ -134,6 +134,11 @@ a {
   } 
   @media(max-width: 444px) {
     #navbar ul {
+      font-size: 90%;
+    }
+  } 
+  @media(max-width: 330px) {
+    #navbar ul {
       font-size: 70%;
     }
   } 
