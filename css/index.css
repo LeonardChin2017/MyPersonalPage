@@ -74,7 +74,7 @@ a {
 /*======================================================
                           Navbar
   ======================================================*/
-.logo {
+.tag {
   float: left;
   font-family: Lato, Helvetica, Arial, sans-serif;
   margin-left: 28px;
@@ -82,8 +82,9 @@ a {
   height: 60px;
   letter-spacing: 1px;
 } @media(max-width: 768px) {
-    .logo {
+    .tag {
 /*       margin-left: 5px; */
+         font-size: 0px;
     }
 }
 
@@ -103,7 +104,7 @@ a {
 .nav-wrapper {
   margin: auto;
   text-align: right;
-  width: 70%;
+  width: 95%;
 } @media(max-width: 768px) {
     .nav-wrapper {
       width: 90%;
