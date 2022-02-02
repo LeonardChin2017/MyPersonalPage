@@ -84,6 +84,7 @@ a {
 } @media(max-width: 768px) {
     .tag {
 /*       margin-left: 5px; */
+         display: none;
          font-size: 0px;
     }
 }
