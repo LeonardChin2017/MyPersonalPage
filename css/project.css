@@ -224,4 +224,8 @@ border-bottom-color: transparent;
   animation-timing-function: linear; 
 }
       
-    
+.container {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}

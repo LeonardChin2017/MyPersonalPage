@@ -12,8 +12,14 @@
     <link rel="stylesheet" href="css/project.css">
   </head>
 
-  <body>
-    <div class="load" id="load"></div>
+  <body onload="self.scrollTo(0,0)">
+    <div class="loding_class" id="loading_class">
+      <div class="load" id="load"></div>
+      <div class="container">
+        <div class="center">Loading contents ...  </div>
+      </div>
+    </div>
+    
 
     <div id="main_content" class="container mt-5 mb-5" style="visibility: hidden;">
         <div class="d-flex justify-content-center row">
@@ -427,11 +433,11 @@
               document.querySelector(
                 "#main_content").style.visibility = "hidden";
               document.querySelector(
-                "#load").style.visibility = "visible";
+                "#loading_class").style.visibility = "visible";
           } else {
             setTimeout(function (){
               document.querySelector(
-                "#load").style.display = "none";
+                "#loading_class").style.display = "none";
               document.querySelector(
                 "#main_content").style.visibility = "visible";
             }, 1000);

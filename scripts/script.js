@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 function setIframeSrc(newSrc) {
     document.getElementById("MainPageContainer").src=newSrc;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 let menuIcon = document.querySelector('.menuIcon');
