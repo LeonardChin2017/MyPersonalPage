@@ -13,7 +13,9 @@
   </head>
 
   <body>
-    <div class="container mt-5 mb-5">
+    <div class="load" id="load"></div>
+
+    <div id="main_content" class="container mt-5 mb-5" style="visibility: hidden;">
         <div class="d-flex justify-content-center row">
             <div class="col-md-10">
                 <div class="row p-2 bg-white border rounded">
@@ -411,6 +413,33 @@
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
+
+    <script>
+      document.onreadystatechange = function() {
+          // For testing
+          // document.querySelector(
+          //       "#main_content").style.visibility = "hidden";
+          // document.querySelector(
+          //   "#load").style.visibility = "visible";
+              
+        
+          if (document.readyState !== "complete") {
+              document.querySelector(
+                "#main_content").style.visibility = "hidden";
+              document.querySelector(
+                "#load").style.visibility = "visible";
+          } else {
+            setTimeout(function (){
+              document.querySelector(
+                "#load").style.display = "none";
+              document.querySelector(
+                "#main_content").style.visibility = "visible";
+            }, 1000);
+              
+          }
+      };
+      
+    </script>
     
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="scripts/project.js"></script>
