@@ -10,11 +10,6 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' type='text/css'>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <style>
-      #menu li a.active {
-        color: #ff4081;
-      }
-    </style>
   </head>
 
   <body>
@@ -71,30 +66,42 @@
     <script src="scripts/script.js"></script>
     <script>
       var iframe = document.getElementById("MainPageContainer");
-  
+
       // Function to set iframe source and store the active tag in local storage
       function setIframeSrc(src) {
         iframe.src = src;
         localStorage.setItem("activeTag", src);
       }
-  
+
       iframe.onload = function() {
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
       };
-  
+
       window.addEventListener('resize', function() {
         location.reload();
       });
-  
+
       // Retrieve the active tag from local storage
       var activeTag = localStorage.getItem("activeTag");
       if (activeTag) {
         // Add "active" class to the corresponding link
-        var activeLink = document.querySelector(`[onclick="setIframeSrc('${activeTag}')"]`);
-        activeLink.classList.add("active");
-  
+        var links = document.querySelectorAll("#menu li a");
+        links.forEach(function(link) {
+          if (link.getAttribute("onclick").includes(activeTag)) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+
         // Set the iframe source to the corresponding page
         iframe.src = activeTag;
+      } else {
+        // Remove "active" class from all links if there is no active tag
+        var links = document.querySelectorAll("#menu li a");
+        links.forEach(function(link) {
+          link.classList.remove("active");
+        });
       }
     </script>
   </body>
