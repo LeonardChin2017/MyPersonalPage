@@ -10,6 +10,11 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' type='text/css'>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+      #menu li a.active {
+        color: #ff4081;
+      }
+    </style>
   </head>
 
   <body>
@@ -19,7 +24,7 @@
         <div class="loader">
           <div class="inner"></div>
         </div>
-        <p style = "margin-top: 20px;"> Loading ... </p>
+        <p style="margin-top: 20px;">Loading ...</p>
       </div>
     </div>
 
@@ -41,7 +46,6 @@
       </div>
     </div>
     
-    
     <nav id="navbar" class="">
       <div class="nav-wrapper">
         <div class="tag">
@@ -57,24 +61,41 @@
       </div>
     </nav>
     
-    <iframe src="about.html" class = "iframe_layout" id="MainPageContainer" scrolling="no" ></iframe>
-
-    <script>
-      var iframe = document.getElementById("MainPageContainer");
-      iframe.onload = function(){
-          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + 'px';
-      }
-
-      window.addEventListener('resize', function() {
-        location.reload();
-      });
-    </script>
+    <iframe src="about.html" class="iframe_layout" id="MainPageContainer" scrolling="no"></iframe>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="scripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+    <script>
+      var iframe = document.getElementById("MainPageContainer");
+  
+      // Function to set iframe source and store the active tag in local storage
+      function setIframeSrc(src) {
+        iframe.src = src;
+        localStorage.setItem("activeTag", src);
+      }
+  
+      iframe.onload = function() {
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
+      };
+  
+      window.addEventListener('resize', function() {
+        location.reload();
+      });
+  
+      // Retrieve the active tag from local storage
+      var activeTag = localStorage.getItem("activeTag");
+      if (activeTag) {
+        // Add "active" class to the corresponding link
+        var activeLink = document.querySelector(`[onclick="setIframeSrc('${activeTag}')"]`);
+        activeLink.classList.add("active");
+  
+        // Set the iframe source to the corresponding page
+        iframe.src = activeTag;
+      }
+    </script>
   </body>
 </html>
