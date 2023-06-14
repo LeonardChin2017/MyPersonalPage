@@ -77,17 +77,9 @@
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
       };
 
-      // Check if the device is a laptop or desktop
-      function isLaptopOrDesktop() {
-        return window.innerWidth >= 1024;
-      }
-
-      // Add resize event listener only for laptop or desktop devices
-      if (isLaptopOrDesktop()) {
-        window.addEventListener('resize', function() {
+      window.addEventListener('resize', function() {
           location.reload();
-        });
-      }
+      });
 
       // Retrieve the active tag from local storage
       var activeTag = localStorage.getItem("activeTag");
