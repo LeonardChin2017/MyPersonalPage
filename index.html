@@ -68,42 +68,50 @@
     <script>
       var iframe = document.getElementById("MainPageContainer");
 
-      // Function to set iframe source and store the active tag in local storage
-      function setIframeSrc(src) {
-        iframe.src = src;
-        localStorage.setItem("activeTag", src);
-      }
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      iframe.onload = function() {
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
-      };
+      if (!isMobile) {
 
-      // window.addEventListener('resize', function() {
-      //     location.reload();
-      // });
+        window.addEventListener('resize', function() {
+            location.reload();
+        });
+        
+        // Execute the code only on desktop or laptop devices
+        // Function to set iframe source and store the active tag in local storage
+        function setIframeSrc(src) {
+          iframe.src = src;
+          localStorage.setItem("activeTag", src);
+        }
 
-      // Retrieve the active tag from local storage
-      var activeTag = localStorage.getItem("activeTag");
-      if (activeTag) {
-        // Add "active" class to the corresponding link
-        var links = document.querySelectorAll("#menu li a");
-        links.forEach(function(link) {
-          if (link.getAttribute("onclick").includes(activeTag)) {
-            link.classList.add("active");
-          } else {
+        iframe.onload = function() {
+          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
+        };
+
+        // Retrieve the active tag from local storage
+        var activeTag = localStorage.getItem("activeTag");
+        if (activeTag) {
+          // Add "active" class to the corresponding link
+          var links = document.querySelectorAll("#menu li a");
+          links.forEach(function(link) {
+            if (link.getAttribute("onclick").includes(activeTag)) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+
+          // Set the iframe source to the corresponding page
+          iframe.src = activeTag;
+        } else {
+          // Remove "active" class from all links if there is no active tag
+          var links = document.querySelectorAll("#menu li a");
+          links.forEach(function(link) {
             link.classList.remove("active");
-          }
-        });
-
-        // Set the iframe source to the corresponding page
-        iframe.src = activeTag;
-      } else {
-        // Remove "active" class from all links if there is no active tag
-        var links = document.querySelectorAll("#menu li a");
-        links.forEach(function(link) {
-          link.classList.remove("active");
-        });
+          });
+        }
       }
+
     </script>
   </body>
 </html>
+
