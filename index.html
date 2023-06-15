@@ -67,30 +67,19 @@
     <script src="scripts/script.js"></script>
     <script>
       var iframe = document.getElementById("MainPageContainer");
-
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
+    
       if (!isMobile) {
-
-        window.addEventListener('resize', function() {
-            location.reload();
-        });
-        
         // Execute the code only on desktop or laptop devices
-        // Function to set iframe source and store the active tag in local storage
+    
+        // Function to set iframe source and store the active tag in sessionStorage
         function setIframeSrc(src) {
           iframe.src = src;
-          localStorage.setItem("activeTag", src);
+          sessionStorage.setItem("activeTag", src);
         }
-
-        iframe.onload = function() {
-          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
-        };
-
-        // Retrieve the active tag from local storage
-        var activeTag = localStorage.getItem("activeTag");
-        if (activeTag) {
-          // Add "active" class to the corresponding link
+    
+        // Function to set the active class on the corresponding link
+        function setActiveLink(activeTag) {
           var links = document.querySelectorAll("#menu li a");
           links.forEach(function(link) {
             if (link.getAttribute("onclick").includes(activeTag)) {
@@ -99,19 +88,29 @@
               link.classList.remove("active");
             }
           });
-
+        }
+    
+        iframe.onload = function() {
+          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 50 + "px";
+        };
+    
+        // Retrieve the active tag from sessionStorage
+        var activeTag = sessionStorage.getItem("activeTag");
+    
+        if (activeTag) {
           // Set the iframe source to the corresponding page
           iframe.src = activeTag;
-        } else {
-          // Remove "active" class from all links if there is no active tag
-          var links = document.querySelectorAll("#menu li a");
-          links.forEach(function(link) {
-            link.classList.remove("active");
-          });
+    
+          // Set the active class on the corresponding link
+          setActiveLink(activeTag);
         }
+    
+        // Add event listener to save the active tag before refreshing
+        window.addEventListener("beforeunload", function() {
+          sessionStorage.setItem("activeTag", iframe.src);
+        });
       }
-
-    </script>
+    </script>    
   </body>
 </html>
 
