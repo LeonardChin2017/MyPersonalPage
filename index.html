@@ -45,17 +45,17 @@
     <nav id="navbar">
       <div class="nav-wrapper">
         <div class="tag">
-          <p><i class="fas fa-laptop-code"></i> "Just Do It ~"</p>
+          <p id="navbarText"><span id="typingText"></span></p>
         </div>
         <!-- Navbar Links -->
         <ul id="menu">
-          <li><a onclick='setIframeSrc("about.html")'>About</a></li>
-          <li><a onclick='setIframeSrc("education.html")'>Education</a></li>
-          <li><a onclick='setIframeSrc("experience.html")'>Experience</a></li>
-          <li><a onclick='setIframeSrc("projects.html")'>Projects</a></li>
+          <li><a onclick='setIframeSrc("about.html", "About Me")'>About</a></li>
+          <li><a onclick='setIframeSrc("education.html", "My Education Background")'>Education</a></li>
+          <li><a onclick='setIframeSrc("experience.html", "My Working Experience")'>Experience</a></li>
+          <li><a onclick='setIframeSrc("projects.html", "Build Cool Stuff")'>Projects</a></li>
         </ul>
       </div>
-    </nav>    
+    </nav>
     
     <iframe src="about.html" class="iframe_layout" id="MainPageContainer" scrolling="no"></iframe>
 
@@ -67,6 +67,7 @@
     <script src="scripts/script.js"></script>
     <script>
       var iframe = document.getElementById("MainPageContainer");
+      var navbarText = document.getElementById("navbarText");
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       var previousWidth = window.innerWidth;
     
@@ -74,8 +75,10 @@
         // Execute the code only on desktop or laptop devices
     
         // Function to set iframe source and store the active tag in sessionStorage
-        function setIframeSrc(src) {
+        function setIframeSrc(src, newText) {
           iframe.src = src;
+          // TODO: probably will remove this code in future
+          // navbarText.innerHTML = newText;
           sessionStorage.setItem("activeTag", src);
         }
     
@@ -124,6 +127,70 @@
           }
         });
       }
+
+      // Array of strings to be displayed
+      var phrases = ["Nice to meet you ~", "你好，很高兴认识你 ~", "はじめまして ~"];
+
+      // Index to keep track of the current phrase
+      var currentPhraseIndex = 0;
+
+      // Get the typingText element
+      var typingTextElement = document.getElementById("typingText");
+
+      // Function to simulate typing animation
+      function type() {
+        var currentPhrase = phrases[currentPhraseIndex];
+        var currentCharIndex = 0;
+
+        // Clear the typingText element
+        typingTextElement.textContent = "";
+
+        // Interval function to add characters to the typingText element
+        var interval = setInterval(function() {
+          typingTextElement.textContent += currentPhrase[currentCharIndex];
+          currentCharIndex++;
+
+          // Check if the entire phrase has been typed
+          if (currentCharIndex >= currentPhrase.length) {
+            // Clear the interval after the typing animation is complete
+            clearInterval(interval);
+
+            // Wait for a few seconds before erasing the text
+            setTimeout(erase, 2000);
+          }
+        }, 100); // Delay between each character being typed
+      }
+
+      // Function to simulate erasing animation
+      function erase() {
+        var currentPhrase = phrases[currentPhraseIndex];
+        var currentCharIndex = currentPhrase.length - 1;
+
+        // Interval function to erase characters from the typingText element
+        var interval = setInterval(function() {
+          typingTextElement.textContent = typingTextElement.textContent.slice(0, -1);
+          currentCharIndex--;
+
+          // Check if the entire phrase has been erased
+          if (currentCharIndex < 0) {
+            // Clear the interval after the erasing animation is complete
+
+            // Move to the next phrase
+            currentPhraseIndex++;
+            if (currentPhraseIndex >= phrases.length) {
+              currentPhraseIndex = 0; // Start from the beginning if all phrases have been shown
+            }
+
+            // Start the typing animation again after a short delay
+            setTimeout(type, 1000);
+            clearInterval(interval);
+          }
+        }, 50); // Delay between each character being erased
+      }
+
+      // Start the typing animation
+      setTimeout(type, 1000);
+
     </script>        
   </body>
 </html>
