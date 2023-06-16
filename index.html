@@ -26,7 +26,7 @@
     <div class="jumbotron jumbotron-fluid header_text" style="margin-bottom: 0px; background-color: #212121;">
       <div class="container">
         <div class="myName">
-          <h1 class="display-4 text-center header_name" style="margin-top: 50px; color: white; border: 2px solid white; padding: 10px;">CHIN HUNG VUI</h1>
+          <h1 class="display-4 text-center header_name typing-animation" style="margin-top: 50px; color: white; border: 2px solid white; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">CHIN HUNG VUI</h1>
         </div>
         <p style="font-size: 0.8em; line-height: 1.6; padding-top: 10px;" class="lead text-center white-text text-darken-2">Senior Software Engineer | Software Integrator</p>
         <p style="font-size: 0.8em; line-height: 1.6;" class="lead text-center white-text text-darken-2">Bachelor of Engineering (Hons) Electrical-Electronics @ University of Technology Malaysia (UTM)</p>
@@ -45,7 +45,7 @@
     <nav id="navbar">
       <div class="nav-wrapper">
         <div class="tag">
-          <p id="navbarText"><span id="typingText"></span></p>
+          <p id="navbarText">Build Cool Stuff</p>
         </div>
         <!-- Navbar Links -->
         <ul id="menu">
@@ -128,69 +128,45 @@
         });
       }
 
-      // Array of strings to be displayed
-      var phrases = ["Nice to meet you ~", "你好，很高兴认识你 ~", "Apa khabar ~", "はじめまして ~"];
+      document.addEventListener("DOMContentLoaded", function() {
+      var text = "CHIN HUNG VUI";
+      var delay = 100;
+      var speed = 200;
 
-      // Index to keep track of the current phrase
-      var currentPhraseIndex = 0;
+      var element = document.querySelector(".typing-animation");
 
-      // Get the typingText element
-      var typingTextElement = document.getElementById("typingText");
-
-      // Function to simulate typing animation
-      function type() {
-        var currentPhrase = phrases[currentPhraseIndex];
-        var currentCharIndex = 0;
-
-        // Clear the typingText element
-        typingTextElement.textContent = "";
-
-        // Interval function to add characters to the typingText element
+      function typeEffect() {
+        var length = text.length;
+        var i = 0;
         var interval = setInterval(function() {
-          typingTextElement.textContent += currentPhrase[currentCharIndex];
-          currentCharIndex++;
-
-          // Check if the entire phrase has been typed
-          if (currentCharIndex >= currentPhrase.length) {
-            // Clear the interval after the typing animation is complete
+          element.innerHTML = text.slice(0, i + 1);
+          i++;
+          if (i >= length) {
             clearInterval(interval);
-
-            // Wait for a few seconds before erasing the text
-            setTimeout(erase, 2000);
+            setTimeout(function() {
+              eraseEffect();
+            }, speed);
           }
-        }, 100); // Delay between each character being typed
+        }, delay);
       }
 
-      // Function to simulate erasing animation
-      function erase() {
-        var currentPhrase = phrases[currentPhraseIndex];
-        var currentCharIndex = currentPhrase.length - 1;
-
-        // Interval function to erase characters from the typingText element
+      function eraseEffect() {
+        var length = text.length;
+        var i = length;
         var interval = setInterval(function() {
-          typingTextElement.textContent = typingTextElement.textContent.slice(0, -1);
-          currentCharIndex--;
-
-          // Check if the entire phrase has been erased
-          if (currentCharIndex < 0) {
-            // Clear the interval after the erasing animation is complete
-
-            // Move to the next phrase
-            currentPhraseIndex++;
-            if (currentPhraseIndex >= phrases.length) {
-              currentPhraseIndex = 0; // Start from the beginning if all phrases have been shown
-            }
-
-            // Start the typing animation again after a short delay
-            setTimeout(type, 1000);
+          element.innerHTML = text.slice(0, i);
+          i--;
+          if (i <= 0) {
             clearInterval(interval);
+            setTimeout(function() {
+              typeEffect();
+            }, speed);
           }
-        }, 50); // Delay between each character being erased
+        }, delay);
       }
 
-      // Start the typing animation
-      setTimeout(type, 1000);
-
+      typeEffect();
+    });
     </script>        
   </body>
 </html>
