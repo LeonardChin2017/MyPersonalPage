@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Leonard</title>
+    <title>Leonard Chin Hung Vui</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' type='text/css'>
@@ -143,6 +143,7 @@
           i++;
           if (i >= length) {
             clearInterval(interval);
+            element.classList.add("typing-cursor"); // Add class to show the cursor
             setTimeout(function() {
               eraseEffect();
             }, speed);
@@ -158,6 +159,7 @@
           i--;
           if (i <= 0) {
             clearInterval(interval);
+            element.classList.remove("typing-cursor"); // Remove class to hide the cursor
             setTimeout(function() {
               typeEffect();
             }, speed);
