@@ -28,8 +28,8 @@
     padding-top: 30px;
     padding-left: 80px;
     padding-right: 80px;
-    margin-left: 150px; /* Add left margin */
-    margin-right: 150px; /* Add right margin */
+    margin-left: auto; /* Add left margin */
+    margin-right: auto; /* Add right margin */
   }
 }
 
@@ -41,6 +41,7 @@
   margin-top: 15px;
   margin-bottom: 20px;
   width: 100%;
+  word-break: break-word; /* Added word-break property */
 }
 
 .rounded-rectangle:hover {
@@ -52,15 +53,15 @@
 }
 
 .rounded-rectangle p {
-  font-size: 20px; /* Updated font size to make it smaller */
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 0;
-  opacity: 0.7; /* Added opacity to create a fade effect */
-  transition: opacity 0.3s ease; /* Added transition for a smooth fade effect */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
 .rounded-rectangle:hover p {
-  opacity: 1; /* Increase opacity on hover to restore full visibility */
+  opacity: 1;
 }
 
 

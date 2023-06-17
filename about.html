@@ -16,24 +16,31 @@
         justify-content: center;
         align-items: center;
       }
-    
-      @media (min-width: 768px) {
-        .profile-picture {
-          width: 300px;
-          margin-bottom: 20px;
-          margin-right: 230px; /* Adjusted margin-right to move the image closer to the text */
-        }
-      
-        .col-lg-6.order-lg-1 {
-          padding-right: 10px; /* Adjusted padding-right to reduce the space between text and image */
+
+      .profile-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+
+      @media (min-width: 1001px) {
+        .col-lg-6.order-lg-2 {
+          padding-left: 10px; /* Adjusted padding-left to reduce the space between text and image */
         }
       }
-      
-      @media (max-width: 767px) {
-        .profile-picture {
-          display: block;
-          margin: 0 auto;
-          width: 200px;
+
+      @media (max-width: 1000px) {
+        .profile-image {
+          width: 100%;
+          max-width: 200px;
+          height: auto;
           margin-bottom: 20px;
         }
       }
@@ -43,11 +50,10 @@
 <body>
     
     <div class="separator section_header"> <i class="fas fa-user" style="padding-right: 10px;"></i> About Me</div>
-
     <div class="container-fluid aboutMe_Body">
       <div class="row">
         <div class="col-lg-6 order-lg-2 center-div">
-          <img src="resource/images/profilepic.png" alt="Profile Picture" class="profile-picture">
+          <img src="resource/images/profilepic.png" alt="Profile Picture" class="profile-image">
         </div>
         <div class="col-lg-6 order-lg-1">
           <p class="long-text">
@@ -89,6 +95,8 @@
         </div>
       </div>
     </div>
+
+   
     
     
     
