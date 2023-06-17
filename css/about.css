@@ -10,6 +10,13 @@
     font-size: 20px;
 }
 
+.long-text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+
 .aboutMe_Body{
     padding-top:30px;
     padding-left:80px;
@@ -41,14 +48,21 @@
 }
 
 .rounded-rectangle h4 {
-  margin-top: 0;
+  margin-top: 10px;
 }
 
 .rounded-rectangle p {
-  font-size: 24px;
+  font-size: 20px; /* Updated font size to make it smaller */
   font-weight: bold;
   margin-bottom: 0;
+  opacity: 0.7; /* Added opacity to create a fade effect */
+  transition: opacity 0.3s ease; /* Added transition for a smooth fade effect */
 }
+
+.rounded-rectangle:hover p {
+  opacity: 1; /* Increase opacity on hover to restore full visibility */
+}
+
 
 .separator {
     display: flex;
