@@ -26,6 +26,29 @@
   }
 }
 
+.rounded-rectangle {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.rounded-rectangle:hover {
+  transform: scale(1.05);
+}
+
+.rounded-rectangle h4 {
+  margin-top: 0;
+}
+
+.rounded-rectangle p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
 .separator {
     display: flex;
     align-items: center;
