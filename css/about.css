@@ -16,6 +16,16 @@
     padding-right:80px;
 }
 
+@media (min-width: 768px) {
+  .aboutMe_Body {
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-left: 150px; /* Add left margin */
+    margin-right: 150px; /* Add right margin */
+  }
+}
+
 .separator {
     display: flex;
     align-items: center;
