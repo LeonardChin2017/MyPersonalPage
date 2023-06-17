@@ -38,7 +38,7 @@
   border-radius: 20px;
   padding: 20px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
   width: 100%;
 }
@@ -48,7 +48,7 @@
 }
 
 .rounded-rectangle h4 {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .rounded-rectangle p {
