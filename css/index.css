@@ -566,3 +566,13 @@ a {
     transform: rotate(-720deg);
   }
 }
+
+.logo-text {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  margin: 0;
+}
+
