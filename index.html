@@ -128,47 +128,50 @@
         });
       }
 
+      var names = ["CHIN HUNG VUI", "LEONARD CHIN"];
+      var currentIndex = 0;
+      var delay = 500;
+
       document.addEventListener("DOMContentLoaded", function() {
-      var text = "CHIN HUNG VUI";
-      var delay = 100;
-      var speed = 200;
+        var element = document.querySelector(".typing-animation");
 
-      var element = document.querySelector(".typing-animation");
+        function typeEffect() {
+          var text = names[currentIndex];
+          var length = text.length;
+          var i = 0;
+          var interval = setInterval(function() {
+            element.innerHTML = text.slice(0, i + 1);
+            i++;
+            if (i >= length) {
+              clearInterval(interval);
+              element.classList.add("typing-cursor"); // Add class to show the cursor
+              setTimeout(function() {
+                eraseEffect();
+              }, delay);
+            }
+          }, delay);
+        }
 
-      function typeEffect() {
-        var length = text.length;
-        var i = 0;
-        var interval = setInterval(function() {
-          element.innerHTML = text.slice(0, i + 1);
-          i++;
-          if (i >= length) {
-            clearInterval(interval);
-            element.classList.add("typing-cursor"); // Add class to show the cursor
-            setTimeout(function() {
-              eraseEffect();
-            }, speed);
-          }
-        }, delay);
-      }
+        function eraseEffect() {
+          var text = names[currentIndex];
+          var length = text.length;
+          var i = length;
+          var interval = setInterval(function() {
+            element.innerHTML = text.slice(0, i);
+            i--;
+            if (i <= 0) {
+              clearInterval(interval);
+              element.classList.remove("typing-cursor"); // Remove class to hide the cursor
+              currentIndex = (currentIndex + 1) % names.length; // Update the index to switch between names
+              setTimeout(function() {
+                typeEffect();
+              }, delay);
+            }
+          }, delay);
+        }
 
-      function eraseEffect() {
-        var length = text.length;
-        var i = length;
-        var interval = setInterval(function() {
-          element.innerHTML = text.slice(0, i);
-          i--;
-          if (i <= 0) {
-            clearInterval(interval);
-            element.classList.remove("typing-cursor"); // Remove class to hide the cursor
-            setTimeout(function() {
-              typeEffect();
-            }, speed);
-          }
-        }, delay);
-      }
-
-      typeEffect();
-    });
+        typeEffect();
+      });
     </script>        
   </body>
 </html>
