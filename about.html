@@ -11,39 +11,39 @@
     <link rel="stylesheet" href="css/about.css">
 
     <style>
-      .center-div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the top */
+    }
 
+    .profile-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+      margin-right: auto;
+      margin-left: auto;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    @media (min-width: 1001px) {
+      .col-lg-6.order-lg-2 {
+        padding-left: 20px; /* Adjust the padding to your preference */
+      }
+    }
+
+
+    @media (max-width: 1000px) {
       .profile-image {
         width: 100%;
-        max-width: 300px;
+        max-width: 200px;
         height: auto;
         margin-bottom: 20px;
-        margin-right: auto;
-        margin-left: auto;
-        border: 2px solid #000;
-        border-radius: 10px;
-        padding: 5px;
       }
-
-
-      @media (min-width: 1001px) {
-        .col-lg-6.order-lg-2 {
-          padding-left: 10px; /* Adjusted padding-left to reduce the space between text and image */
-        }
-      }
-
-      @media (max-width: 1000px) {
-        .profile-image {
-          width: 100%;
-          max-width: 200px;
-          height: auto;
-          margin-bottom: 20px;
-        }
-      }
+    }
     </style>
     
 </head>
@@ -52,7 +52,7 @@
     <div class="separator section_header"> <i class="fas fa-user" style="padding-right: 10px;"></i> About Me</div>
     <div class="container-fluid aboutMe_Body">
       <div class="row">
-        <div class="col-lg-6 order-lg-2 center-div">
+        <div class="col-lg-6 order-lg-2 col-md-12 col-sm-12 center-div">
           <img src="resource/images/profilepic.png" alt="Profile Picture" class="profile-image">
         </div>
         <div class="col-lg-6 order-lg-1">
@@ -66,7 +66,6 @@
             and approach my work with a strong sense of dedication and enthusiasm. I am constantly driven to expand my
             knowledge and skills through continuous learning."
           </p>
-    
           <div class="container">
             <div class="row">
               <div class="col-lg-4">
@@ -103,107 +102,6 @@
     <div class="separator section_header"> Tech Stacks</div>
 
     <div class="container-fluid tech_stacks_table" style="margin-top: 30px;">
-
-      <div class="row">
-        <div class="col-md-6 tech_stacks_icons">
-          <img src="resource/images/C.png" alt="C Programming" class="w-25" />
-          <img src="resource/images/cplusplus.png" alt="C++ Programming" class="w-25" style="margin-left: 20px;"/>
-        </div>
-        <div class="col-md-6">
-          <div class="row align-items-center h-100">
-            <div class="col">
-              <p> I am using <strong> C </strong> on a daily basis. I have written numerous drivers and modules in
-                  <strong> C </strong> during my time in ROBOCON team and at Continental Automotive.
-                                       
-              </p>
-              
-              <p> I am using <strong> C++ </strong> on a daily basis. In ROBOCON team, I utilized <strong> C++ </strong>for Robot Operating System (ROS) and OpenCV Image Processing. 
-                  During my time in Continental Automotive, I use <strong>C++</strong> to develop Human Machine Interface (HMI) application and Graphical Controller (GC) application for multiple global projects.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row">
-        <div class="col-md-6 order-md-6 tech_stacks_icons">
-          <img src="resource/images/Python.png" alt="Python" class="w-25"/>
-          <img src="resource/images/Java.png" alt="Java" class="w-25" style="margin-left: 20px;"/>
-          <img src="resource/images/Jenkins.png" alt="Jenkins" class="w-25" style="margin-left: 20px;"/>
-        </div>
-        <div class="col-md-6 order-md-1">
-          <div class="row align-items-center h-100">
-            <div class="col">
-              <p> I have used <strong> Python </strong> to create numerous tools to automate the repetitive tasks in multiple global projects at Continental Automotive which have significantly saved developers' time and effort. Additionally, I also used <strong> Python </strong>
-                  for my Final Year Project (Real-Time Hand Gesture Recognition Using Deep Learning for Smart Home System).
-              </p>
-
-              <p> I used <strong> Java </strong> extensively during my time in University. I used <strong> Java </strong> and Android Studio to develop many Android Mobile Applications. I actively participated in many competitions using the Android Mobile Application I created and won many awards. In addition, I have hand-on experience with JUnit.
-              </p>
-
-              <p> I deploy and maintain CI/CD using <strong> Jenkins, Git, and Jira </strong> for new project in Continental Automotive.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 tech_stacks_icons">
-          <img src="resource/images/cgi_studio.png" alt="CGI Studio" class="w-25" />
-          <img src="resource/images/robot_framework.png" alt="Robot Framework" class="w-25" style="margin-left: 20px;"/>
-        </div>
-        <div class="col-md-6">
-          <div class="row align-items-center h-100">
-            <div class="col">
-              <p> <strong> Candera CGI Studio </strong>is an embedded HMI modeling tool that I have utilized to create multiple HMI widgets with fancy animations and designs for projects at Continental Automotive.
-              </p>
-              
-              <p> <strong> Robot Framework </strong>is an open-source automation testing framework. I used it to deploy the automation test bench for our project in Continental Automotive.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 order-md-6 tech_stacks_icons">
-          <img src="resource/images/html.png" alt="HTML" class="w-25"/>
-          <img src="resource/images/CSS.png" alt="CSS" class="w-25" style="margin-left: 20px;"/>
-          <img src="resource/images/JS.png" alt="Javascript" class="w-25" style="margin-left: 20px;"/>
-        </div>
-        <div class="col-md-6 order-md-1">
-          <div class="row align-items-center h-100">
-            <div class="col">
-              <p> This portfolio webpage is written with <strong>HTML, CSS, and Javascript</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 tech_stacks_icons">
-          <img src="resource/images/nodejs.png" alt="Node.Js" class="w-25" />
-          <img src="resource/images/firebase.png" alt="Firebase" class="w-25" style="margin-left: 20px;"/>
-          <img src="resource/images/postgresql.png" alt="PostgreSQL" class="w-25" style="margin-left: 20px;"/>
-        </div>
-        <div class="col-md-6">
-          <div class="row align-items-center h-100">
-            <div class="col">
-              <p> I understand how to write a simple server using Node.js(with Express & EJS) to communicate with front-end and database. Know how to create RESTful API using Node Js and perform the test with Postman. 
-              </p>
-              
-              <p> I have used Firebase as a NoSQL database in multiple school projects.
-              </p>
-
-              <p> I am familiar with all the fundamentals of <strong> PostgreSQL </strong>, and I use <strong> PostgreSQL </strong> with pgAdmin tool.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
 
     </div>
   </div>
