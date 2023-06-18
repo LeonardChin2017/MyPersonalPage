@@ -17,6 +17,47 @@
       align-items: flex-start; /* Align items at the top */
     }
 
+    .rounded-rectangle_tech_stacks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      background-color: #fff;
+      margin-bottom: 20px;
+      padding-top: 20px; /* Add space above the title */
+    }
+
+    .rounded-rectangle_tech_stacks > hr {
+      border: none;
+      border-top: 1px solid #000; /* Specify the color of the horizontal line */
+      margin: 10px 0; /* Adjust the margin as needed */
+    }
+
+
+
+    .icon-list li {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    .icon {
+      width: 24px; /* Adjust the size as needed */
+      height: 24px; /* Adjust the size as needed */
+      filter: grayscale(100%); /* Converts the icon to grayscale */
+    }
+
+    .icon-name {
+      font-size: 16px; /* Adjust the font size as needed */
+      margin-left: 5px;
+    }
+
+
     .profile-image {
       width: 100%;
       max-width: 45%;
@@ -108,32 +149,58 @@
     </div>
   </div>
   
-    
-    
-    
-      
-     
-    
-    
-
-        
+  <div class="section-header d-flex justify-content-center" style="margin-top: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="header-text">
+            <h2>Tech Stacks</h2>
+          </div>
+        </div>
       </div>
-      
-    </div>
-    
-    
-    
-    
-
-   
-
-    <div class="separator section_header"> Tech Stacks</div>
-
-    <div class="container-fluid tech_stacks_table" style="margin-top: 30px;">
-
     </div>
   </div>
-    
+
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="rounded-rectangle_tech_stacks">
+            <div class="title-section">
+              <h4>Software Development</h4>
+            </div>
+            <ul class="icon-list">
+              <li>
+                <img src="resource/icons/csharp.png" alt="C#" class="icon">
+                <span class="icon-name">C#</span>
+              </li>
+              <li>
+                <img src="resource/icons/c.png" alt="C" class="icon">
+                <span class="icon-name">C</span>
+              </li>
+              <li>
+                <img src="resource/icons/cplusplus.png" alt="C++" class="icon">
+                <span class="icon-name">C++</span>
+              </li>
+              <li>
+                <img src="resource/icons/csharp.png" alt="C#" class="icon">
+                <span class="icon-name">C#</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Other rectangles -->
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+  
+  
+  
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="scripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
