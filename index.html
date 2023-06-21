@@ -74,13 +74,16 @@
       if (true) {
         // Execute the code only on desktop or laptop devices
     
-        // Function to set iframe source and store the active tag in sessionStorage
+        // Function to set iframe source, scroll to top, and store the active tag in sessionStorage
         function setIframeSrc(src, newText) {
           iframe.src = src;
-          // TODO: probably will remove this code in future
+          iframe.contentWindow.scrollTo(0, 0); // Scroll the iframe to the top
+          window.scrollTo(0, 0); // Scroll the main page to the top
+          // TODO: probably will remove this code in the future
           // navbarText.innerHTML = newText;
           sessionStorage.setItem("activeTag", src);
         }
+
     
         // Function to set the active class on the corresponding link
         function setActiveLink(activeTag) {
