@@ -43,6 +43,44 @@
         .read-more-icon {
             margin-left: 5px;
         }
+
+        /* Custom Styles for Search Bar */
+        .search-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px; /* Add margin-top */
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 1800px; /* Increase the max-width value to make the input longer */
+            margin-right: 10px;
+        }
+
+        /* Updated Search Button Styles */
+        .search-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            padding: 0 16px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 4px;
+            color: black;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -54,6 +92,17 @@
                     <div class="col-md-12 page-body">
                         <div class="row">
                             <div class="col-md-12 content-page">
+                                <!-- Search Bar Start -->
+                                <form id="search-form" class="search-form">
+                                    <div class="input-group">
+                                        <input type="text" id="search-input" class="form-control search-input" placeholder="Search for content...">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="search-button">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- Search Bar End -->
+
                                 <!-- Blog Post Start -->
                                 <div class="col-md-12 blog-post">
                                     <div class="card">
@@ -64,28 +113,11 @@
                                             <span>April 17, 2017</span>
                                         </div>
                                         <div class="post-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
+                                            <p>Some notes related to deep learning.</p>
                                         </div>
                                         <a href="single.html" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
                                     </div>
                                 </div>
-                                <!-- Blog Post End -->
-
-                                <!-- Blog Post Start -->
-                                <!-- <div class="col-md-12 blog-post">
-                                    <div class="card">
-                                        <div class="post-title">
-                                            <a href="single.html"><h2>Microsoft Imagine Cup Malaysia</h2></a>
-                                        </div>
-                                        <div class="post-info">
-                                            <span>April 17, 2017</span>
-                                        </div>
-                                        <div class="post-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-                                        </div>
-                                        <a href="single.html" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
-                                    </div>
-                                </div> -->
                                 <!-- Blog Post End -->
                             </div>
                         </div>
@@ -101,5 +133,30 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#search-form').on('submit', function(event) {
+                event.preventDefault();
+                var searchQuery = $('#search-input').val().toLowerCase();
+                searchContent(searchQuery);
+            });
+
+            function searchContent(query) {
+                // Retrieve all blog posts
+                var blogPosts = document.querySelectorAll('.blog-post');
+                blogPosts.forEach(function(post) {
+                    var postContent = post.querySelector('.post-content').textContent.toLowerCase();
+                    var postTitle = post.querySelector('.post-title a').textContent.toLowerCase();
+
+                    if (postContent.includes(query) || postTitle.includes(query)) {
+                        post.style.display = 'block';  // Show matching posts
+                    } else {
+                        post.style.display = 'none';   // Hide non-matching posts
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
