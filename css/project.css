@@ -1,54 +1,26 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-body {
-  background: #eee;
+  background: #fff; /* Set white background */
+  color: #000; /* Set black text color */
 }
 
 .ratings i {
-  font-size: 16px;
-  color: red;
-}
-
-.technologies {
-  font-size: 14px;
+  color: #000; /* Set black color for ratings */
 }
 
 .custom_btn {
-  background-color: #607d8b;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
+  background-color: #000; /* Set black background for custom button */
+  color: #fff; /* Set white text color for custom button */
 }
 
 .spec-1 {
-  color: #938787;
-}
-
-h5 {
-  font-weight: 400;
-}
-
-.body_text {
-  font-size: 14px;
-}
-
-.link_text {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.para {
-  font-size: 16px;
+  color: #000; /* Set black color for spec-1 */
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #607d8b;
-  border-color: #607d8b;
+  background-color: #000; /* Set black background for primary button */
+  border-color: #000; /* Set black border color for primary button */
 }
 
 .btn-primary:hover,
@@ -56,43 +28,21 @@ h5 {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #2bbbad;
-  border-color: #2bbbad;
-}
-
-.outer_center {
-  height: 170px;
-  width: 300px;
-}
-
-.inner_center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  background-color: #000; /* Set black background on hover/focus for primary button */
+  border-color: #000; /* Set black border color on hover/focus for primary button */
 }
 
 a:hover {
-  color: rgb(248, 16, 16);
+  color: #000; /* Set black color on hover for links */
 }
 
 a {
-  color: rgb(32, 18, 223);
-  text-decoration: none;
-}
-
-.btn {
-  height: 25px;
+  color: #000; /* Set black color for links */
 }
 
 .line-height-example {
   line-height: 10px;
   min-height: 10px;
-}
-
-a {
-  display: inline-flex !important;
-  align-items: center !important;
 }
 
 /* Modal Image Styling */
@@ -126,8 +76,8 @@ a {
   /* Full height */
   overflow: auto;
   /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
+  background-color: #000;
+  /* Set black background color */
   background-color: rgba(0, 0, 0, 0.9);
   /* Black w/ opacity */
 }
@@ -169,7 +119,7 @@ a {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
+  color: #fff;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
@@ -177,7 +127,7 @@ a {
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: #ccc;
   text-decoration: none;
   cursor: pointer;
 }
@@ -223,10 +173,9 @@ a {
   width: 100%;
   height: 10px;
   margin: 110px auto 0;
-  background-color: #000000;
+  background-color: #000;
   animation: loading 2s ease-in-out infinite;
 }
-
 
 .container {
   display: flex;
