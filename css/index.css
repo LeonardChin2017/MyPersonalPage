@@ -124,7 +124,7 @@ a {
     letter-spacing: 1px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .tag {
       display: none;
       font-size: 0px;
