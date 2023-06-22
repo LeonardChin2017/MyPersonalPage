@@ -194,6 +194,20 @@
       var elems = document.querySelectorAll(".sidenav");
       M.Sidenav.init(elems);
     });
+
+    // Add event listener to hide mobile menu on iframe load
+    iframe.addEventListener("load", function() {
+      hideMobileMenu();
+    });
+
+    // Function to hide the mobile menu
+    function hideMobileMenu() {
+      var mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenu) {
+        var sidenavInstance = M.Sidenav.getInstance(mobileMenu);
+        sidenavInstance.close();
+      }
+    }
     </script>        
   </body>
 </html>
