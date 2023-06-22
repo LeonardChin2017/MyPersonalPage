@@ -134,22 +134,21 @@ a {
       display: none;
       font-size: 0px;
     }
+  }
 
-    .right-tag {
+   @media (max-width: 768px) {
       position: absolute;
-      top: 0;
-      right: 50px; /* Adjust this value to set the desired distance from the hamburger icon */
+      top: 10px;
+      left: 50px; /* Adjust this value to set the desired distance from the hamburger icon */
       display: flex;
       align-items: center;
       font-family: Lato, Helvetica, Arial, sans-serif;
       font-size: 1.5em;
       height: 60px;
       letter-spacing: 1px;
+      margin-top: -10px; /* Adjust this value to move it up or down */
+
     }
-    
-    
-    
-  }
   
   #navbar {
     font-family: Lato, Helvetica, Arial, sans-serif;
