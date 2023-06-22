@@ -195,19 +195,20 @@
       M.Sidenav.init(elems);
     });
 
-    // Add event listener to hide mobile menu on iframe load
-    iframe.addEventListener("load", function() {
-      hideMobileMenu();
-    });
+    // Add event listener to hide mobile menu on menu item click
+    var mobileMenuItems = document.querySelectorAll("#mobile-menu li a");
+      mobileMenuItems.forEach(function(item) {
+        item.addEventListener("click", hideMobileMenu);
+      });
 
-    // Function to hide the mobile menu
-    function hideMobileMenu() {
-      var mobileMenu = document.getElementById("mobile-menu");
-      if (mobileMenu) {
-        var sidenavInstance = M.Sidenav.getInstance(mobileMenu);
-        sidenavInstance.close();
+      // Function to hide the mobile menu
+      function hideMobileMenu() {
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenu) {
+          var sidenavInstance = M.Sidenav.getInstance(mobileMenu);
+          sidenavInstance.close();
+        }
       }
-    }
     </script>        
   </body>
 </html>
