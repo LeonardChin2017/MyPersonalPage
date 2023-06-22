@@ -123,12 +123,32 @@ a {
     height: 60px;
     letter-spacing: 1px;
   }
+
+  .right-tag {
+    display: none;
+    font-size: 0px;
+  }
   
   @media (max-width: 992px) {
     .tag {
       display: none;
       font-size: 0px;
     }
+
+    .right-tag {
+      position: absolute;
+      top: 0;
+      right: 50px; /* Adjust this value to set the desired distance from the hamburger icon */
+      display: flex;
+      align-items: center;
+      font-family: Lato, Helvetica, Arial, sans-serif;
+      font-size: 1.5em;
+      height: 60px;
+      letter-spacing: 1px;
+    }
+    
+    
+    
   }
   
   #navbar {
