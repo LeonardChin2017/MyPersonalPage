@@ -47,16 +47,28 @@
         <div class="tag">
           <p id="navbarText" class="logo-text">Leonard</p>
         </div>
-        <!-- Navbar Links -->
-        <ul id="menu">
-          <li><a onclick='setIframeSrc("about.html", "About Me")'>About</a></li>
-          <li><a onclick='setIframeSrc("education.html", "My Education Background")'>Education</a></li>
-          <li><a onclick='setIframeSrc("experience.html", "My Working Experience")'>Experience</a></li>
-          <li><a onclick='setIframeSrc("projects.html", "Build Cool Stuff")'>Projects</a></li>
-          <!-- <li><a onclick='setIframeSrc("blogs.html", "My Blogs")'>Blogs</a></li> -->
-        </ul>
+        <!-- Toggle button for mobile menu -->
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  
+        <!-- Desktop menu -->
+        <div class="hide-on-med-and-down">
+          <ul id="menu" class="right">
+            <li><a onclick='setIframeSrc("about.html", "About Me")'>About</a></li>
+            <li><a onclick='setIframeSrc("education.html", "My Education Background")'>Education</a></li>
+            <li><a onclick='setIframeSrc("experience.html", "My Working Experience")'>Experience</a></li>
+            <li><a onclick='setIframeSrc("projects.html", "Build Cool Stuff")'>Projects</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
+  
+    <!-- Mobile menu -->
+    <ul class="sidenav" id="mobile-menu">
+      <li><a onclick='setIframeSrc("about.html", "About Me")'>About</a></li>
+      <li><a onclick='setIframeSrc("education.html", "My Education Background")'>Education</a></li>
+      <li><a onclick='setIframeSrc("experience.html", "My Working Experience")'>Experience</a></li>
+      <li><a onclick='setIframeSrc("projects.html", "Build Cool Stuff")'>Projects</a></li>
+    </ul>
     
     <iframe src="about.html" class="iframe_layout" id="MainPageContainer" scrolling="no"></iframe>
 
@@ -176,6 +188,11 @@
 
         typeEffect();
       });
+
+      document.addEventListener("DOMContentLoaded", function() {
+      var elems = document.querySelectorAll(".sidenav");
+      M.Sidenav.init(elems);
+    });
     </script>        
   </body>
 </html>
