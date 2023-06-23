@@ -92,17 +92,6 @@
                     <div class="col-md-12 page-body">
                         <div class="row">
                             <div class="col-md-12 content-page">
-                                <!-- Search Bar Start -->
-                                <form id="search-form" class="search-form">
-                                    <div class="input-group">
-                                        <input type="text" id="search-input" class="form-control search-input" placeholder="Search for content...">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="search-button">Search</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- Search Bar End -->
-
                                 <!-- Blog Post Start -->
                                 <div class="col-md-12 blog-post">
                                     <div class="card">
@@ -113,7 +102,7 @@
                                             <span>April 17, 2017</span>
                                         </div>
                                         <div class="post-content">
-                                            <p>Some notes related to deep learning.</p>
+                                            <p>Still in the process of writing.</p>
                                         </div>
                                         <a href="single.html" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
                                     </div>
@@ -135,27 +124,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready(function() {
-            $('#search-form').on('submit', function(event) {
-                event.preventDefault();
-                var searchQuery = $('#search-input').val().toLowerCase();
-                searchContent(searchQuery);
-            });
+        // Listen for the search query message from the parent window
+        window.addEventListener('message', function (event) {
+            // Get the search query sent from the parent window
+            const searchQuery = event.data.toLowerCase();
 
-            function searchContent(query) {
-                // Retrieve all blog posts
-                var blogPosts = document.querySelectorAll('.blog-post');
-                blogPosts.forEach(function(post) {
-                    var postContent = post.querySelector('.post-content').textContent.toLowerCase();
-                    var postTitle = post.querySelector('.post-title a').textContent.toLowerCase();
+            // Retrieve all blog posts
+            const blogPosts = document.querySelectorAll('.blog-post');
 
-                    if (postContent.includes(query) || postTitle.includes(query)) {
-                        post.style.display = 'block';  // Show matching posts
-                    } else {
-                        post.style.display = 'none';   // Hide non-matching posts
-                    }
-                });
+            // Iterate over the blog posts and filter based on the search query
+            blogPosts.forEach(function (post) {
+            const postContent = post.querySelector('.post-content').textContent.toLowerCase();
+            const postTitle = post.querySelector('.post-title a').textContent.toLowerCase();
+
+            if (postContent.includes(searchQuery) || postTitle.includes(searchQuery)) {
+                post.style.display = 'block'; // Show matching posts
+            } else {
+                post.style.display = 'none'; // Hide non-matching posts
             }
+            });
         });
     </script>
 </body>

@@ -57,6 +57,7 @@
             <li><a onclick='setIframeSrc("education.html", "My Education Background")'>Education</a></li>
             <li><a onclick='setIframeSrc("experience.html", "My Working Experience")'>Experience</a></li>
             <li><a onclick='setIframeSrc("projects.html", "Build Cool Stuff")'>Projects</a></li>
+            <li><a onclick='setIframeSrc("blogs.html", "My Blogs")'>Blogs</a></li>
           </ul>
         </div>
       </div>
@@ -68,6 +69,7 @@
       <li><a onclick='setIframeSrc("education.html", "My Education Background")'>Education</a></li>
       <li><a onclick='setIframeSrc("experience.html", "My Working Experience")'>Experience</a></li>
       <li><a onclick='setIframeSrc("projects.html", "Build Cool Stuff")'>Projects</a></li>
+      <li><a onclick='setIframeSrc("blogs.html", "My Blogs")'>Blogs</a></li>
     </ul>
     
     <iframe src="about.html" class="iframe_layout" id="MainPageContainer" scrolling="no"></iframe>
@@ -217,6 +219,20 @@
         if (windowWidth > 992 && mobileMenu) { // Adjust the threshold as needed (992px is the Bootstrap default for medium-sized screens)
           hideMobileMenu();
         }
+      });
+
+      // Get a reference to the search form and blogs iframe
+      const searchForm = document.getElementById('search-form');
+      const blogsIframe = document.getElementById('MainPageContainer');
+
+      // Listen for form submission
+      searchForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const searchQuery = document.getElementById('search-input').value;
+
+        // Send the search query to the blogs iframe using postMessage
+        blogsIframe.contentWindow.postMessage(searchQuery, '*');
       });
 
     </script>        
