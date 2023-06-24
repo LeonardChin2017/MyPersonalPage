@@ -66,6 +66,22 @@
             margin-bottom: 10px;
         }
         
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
         @media (max-width: 600px) {
             .back-button {
                 display: block;
@@ -105,6 +121,111 @@
         <h2>Setup PostgreSQL</h2>
         <p>Download and install PostgreSQL: <a href="https://www.postgresql.org/download/" target="_blank">https://www.postgresql.org/download/</a></p>
         <p>Download and install pgadmin4: <a href="https://www.pgadmin.org/download/pgadmin-4-windows/" target="_blank">https://www.pgadmin.org/download/pgadmin-4-windows/</a></p>
+
+        <h2>SQL Keywords & Examples</h2>
+        
+        <table>
+            <thead>
+              <tr>
+                <th>Keywords</th>
+                <th>Examples</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SELECT</td>
+                <td>SELECT * FROM tbl</td>
+                <td>Select all rows and columns from the table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>SELECT</td>
+                <td>SELECT c1,c2 FROM tbl</td>
+                <td>Select all rows and columns c1,c2 from the table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>SELECT</td>
+                <td>SELECT c1,c2 FROM tbl WHERE Conditions ORDER BY c1 ASC, c2 DESC</td>
+                <td>Select all rows and columns c1,c2 from the table 'tbl' where conditions order the result by c1 in ascending order and c2 in descending order</td>
+              </tr>
+              <tr>
+                <td>SELECT</td>
+                <td>SELECT DISTINCT c1,c2 FROM tbl</td>
+                <td>Select distinct all rows and columns c1,c2 from the table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>SELECT</td>
+                <td>SELECT c1, aggregate(expr) FROM tbl GROUP BY c1</td>
+                <td>Select column c1 and use aggregate function on expression expr, group columns by column c1</td>
+              </tr>
+              <tr>
+                <td>SELECT</td>
+                <td>SELECT c1, aggregate(expr) AS c2 FROM tbl GROUP BY c1 HAVING c2 &gt; v</td>
+                <td>Select column c1 and cs as column alias of the result of aggregate function on expr. Filter group of records with c2 greater than value v</td>
+              </tr>
+              <tr>
+                <td>INSERT INTO</td>
+                <td>INSERT INTO tbl (c1, c2, ...) VALUES (v1, v2, ...)</td>
+                <td>Insert data into table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>INSERT INTO</td>
+                <td>INSERT INTO tbl (c1, c2, ...) SELECT c1, c2.. FROM tb2 WHERE conditions</td>
+                <td>Insert data from 'tbl2' into table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>UPDATE</td>
+                <td>UPDATE tbl SET c1 = v1, c2 = v2 ... WHERE conditions</td>
+                <td>Update data in table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>DELETE</td>
+                <td>DELETE FROM tbl WHERE conditions</td>
+                <td>Delete records from table based on WHERE conditions</td>
+              </tr>
+              <tr>
+                <td>TRUNCATE</td>
+                <td>TRUNCATE TABLE tbl</td>
+                <td>Drop table 'tbl' and re-create it, all data is lost</td>
+              </tr>
+              <tr>
+                <td>INNER JOIN</td>
+                <td>SELECT * FROM tb1 INNER JOIN tb2 ON join-conditions</td>
+                <td>Inner join table 'tb1' with 'tb2' based on join-conditions</td>
+              </tr>
+              <tr>
+                <td>LEFT JOIN</td>
+                <td>SELECT * FROM tb1 LEFT JOIN tb2 ON join-conditions</td>
+                <td>Left join table 'tb1' with 'tb2' based on join-conditions</td>
+              </tr>
+              <tr>
+                <td>RIGHT JOIN</td>
+                <td>SELECT * FROM tb1 RIGHT JOIN tb2 ON join-conditions</td>
+                <td>Right join table 'tb1' with 'tb2' based on join-conditions</td>
+              </tr>
+              <tr>
+                <td>CREATE TABLE</td>
+                <td>CREATE TABLE tbl (c1 datatype(length) PRIMARY KEY)</td>
+                <td>Create table 'tbl' with primary key is c1</td>
+              </tr>
+              <tr>
+                <td>DROP TABLE</td>
+                <td>DROP TABLE tbl</td>
+                <td>Remove table 'tbl' from database</td>
+              </tr>
+              <tr>
+                <td>ALTER TABLE</td>
+                <td>ALTER TABLE tbl ADD COLUMN c1 datatype (length)</td>
+                <td>Add column c1 to table 'tbl'</td>
+              </tr>
+              <tr>
+                <td>ALTER TABLE</td>
+                <td>ALTER TABLE tbl DROP COLUMN c1</td>
+                <td>Drop column c1 to table 'tbl'</td>
+              </tr>
+            </tbody>
+          </table>
+          
 
     </div>
 </body>
