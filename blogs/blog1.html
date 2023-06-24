@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .back-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back</a>
+        <div class="post-header">
+            <h1>Exploring PostgreSQL: My Learning Notebook</h1>
+            <p class="post-date">Published on Dec 27, 2021</p>
+        </div>
+
+        <h2>RDBMS and NoSQL: Understanding Their Differences</h2>
+        <p> The comparison between RDBMS (Relational Database Management System) and NoSQL can be summarized as follows:</p>
+        <p> NoSQL databases excel in scalability, making them suitable for handling a large number of read-write operations and large 
+            amounts of data with minimal latency. They offer flexibility in data modeling, making them ideal for situations where the 
+            data model is uncertain and subject to frequent changes. NoSQL databases prioritize eventual consistency over strong consistency, 
+            which is advantageous when immediate consistency is not critical and transactions are not required. Additionally, 
+            NoSQL databases are well-suited for data analytics scenarios that involve handling massive amounts of data. However, 
+            it's important to note that SQL-based RDBMS still possesses strengths such as a strong mathematical basis, declarative syntax, 
+            and a well-known language in Structured Query Language (SQL). NoSQL is not intended to replace SQL but rather to provide an
+             alternative for non-relational data scenarios.</p>
+            
+        <p>In this blog, we will focus on RDBMS. Examples of RDBMS include PostgreSQL, MySQL, and Sqlite. SQL is the language used to 
+            access and control RDBMS. Almost all RDBMS systems accept SQL instructions, although there may be slight differences in the 
+            specific SQL dialect they support.</p>
+
+        <h2>PostgreSQL vs. MySQL: Which Is Better?</h2>
+        <p> If you are developing an application with a database backend, you may wonder which option to choose. For applications that 
+            may scale to an enterprise level, involve complex queries, and require frequent write operations, PostgreSQL is a recommended 
+            choice. On the other hand, if you are new to databases, do not anticipate significant scaling, or need a quick prototyping tool, 
+            MySQL is worth considering.</p>
+
+        <h2>Setup PostgreSQL</h2>
+        <p>Download and install PostgreSQL: <a href="https://www.postgresql.org/download/" target="_blank">https://www.postgresql.org/download/</a></p>
+        <p>Download and install pgadmin4: <a href="https://www.pgadmin.org/download/pgadmin-4-windows/" target="_blank">https://www.pgadmin.org/download/pgadmin-4-windows/</a></p>
+
+    </div>
+</body>
+</html>
