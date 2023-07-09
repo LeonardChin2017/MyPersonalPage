@@ -126,9 +126,9 @@
             <div class="rounded-rectangle">
               <i class="fas fa-briefcase"></i>
               <h4>Working Experience</h4>
-              <p>4 years</p>
+              <p id="working-experience">4 years</p>
             </div>
-          </div>
+          </div>          
           <div class="col">
             <div class="rounded-rectangle">
               <i class="fas fa-trophy"></i>
@@ -289,6 +289,37 @@
       rectangles.forEach(rectangle => {
         rectangle.style.height = `${maxHeight}px`;
       });
+
+      function calculateExperience() {
+          // Set the start date of your permanent job
+          const startDate = new Date('July 2019');
+
+          // Get the current date
+          const currentDate = new Date();
+
+          // Calculate the difference in years
+          const diffInYears = currentDate.getFullYear() - startDate.getFullYear();
+
+          // Calculate the difference in months
+          const diffInMonths = currentDate.getMonth() - startDate.getMonth();
+
+          // Adjust the years if the current month is before the start month
+          if (diffInMonths < 0 || (diffInMonths === 0 && currentDate.getDate() < startDate.getDate())) {
+            return diffInYears - 1;
+          }
+
+          // Calculate the total experience in years
+          const totalExperience = diffInYears + diffInMonths / 12;
+
+          // Update the working experience element with the calculated value
+          document.getElementById('working-experience').textContent = totalExperience.toFixed(1) + ' years';
+        }
+
+      // Call the calculateExperience function to update the working experience initially
+      calculateExperience();
+
+
+
     </script>
   </body>
 </html>
