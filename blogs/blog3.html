@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .image-grid img {
+            margin: 10px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        
+        .image-grid .bigger-image {
+            max-height: 560px;
+        }
+        
+        @media (max-width: 900px) {
+            .image-grid img {
+                max-height: 200px;
+            }
+            
+            .image-grid .bigger-image {
+                max-height: 250px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .image-grid img {
+                max-height: 150px;
+            }
+            
+            .image-grid .bigger-image {
+                max-height: 250px;
+            }
+
+            .image-grid .dynamic-image {
+              max-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Google Singapore Office Tour</h1>
+            <p class="post-date">Published on Jan 11, 2019</p>
+        </div>
+        
+        <div class="image-grid">
+            <img src="../resource/images/Google/google_8.jpg" alt="Image 8" class="dynamic-image">
+            <img src="../resource/images/Google/google_9.jpg" alt="Image 9">
+            <img src="../resource/images/Google/google_7.jpg" alt="Image 7">
+            <img src="../resource/images/Google/google_6.jpg" alt="Image 6">
+            <img src="../resource/images/Google/google_2.jpg" alt="Image 2">
+            <img src="../resource/images/Google/google_3.jpg" alt="Image 3" class="bigger-image">
+            <img src="../resource/images/Google/google_4.jpg" alt="Image 4" class="bigger-image">
+            <img src="../resource/images/Google/google_5.jpg" alt="Image 5" class="bigger-image">
+            <img src="../resource/images/Google/google_1.jpg" alt="Image 1" class="bigger-image">
+        </div>
+    </div>
+</body>
+</html>
