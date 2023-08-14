@@ -8,105 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' type='text/css'>
-    <style>
-        .card {
-            margin-top: 30px;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .post-title a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .post-info {
-            color: gray;
-            margin-bottom: 10px;
-        }
-
-        .post-content {
-            margin-bottom: 20px;
-        }
-
-        .read-more {
-            color: black;
-            text-decoration: none;
-        }
-
-        .read-more:hover {
-            color: #333333; /* Dark gray on hover */
-        }
-
-        .read-more-icon {
-            margin-left: 5px;
-        }
-
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 31.25rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-
-        .label {
-            font-size: .625rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: +1.3px;
-            margin-bottom: 1rem;
-        }
-
-        .searchBar {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center; /* Horizontally center the items */
-        }
-
-        #searchQueryInput {
-            width: 100%;
-            height: 2.8rem;
-            background: #f5f5f5;
-            outline: none;
-            border: none;
-            border-radius: 1.625rem;
-            padding: 0 3.5rem 0 1.5rem;
-            font-size: 1rem;
-            -webkit-appearance: none; /* Remove default styles on iOS Safari */
-            -moz-appearance: none; /* Remove default styles on Firefox */
-            appearance: none; /* Remove default styles on other browsers */
-        }
-
-        #searchQueryInput::placeholder {
-            color: #999999; /* Placeholder color */
-        }
-
-        #searchQuerySubmit {
-            width: 3.5rem;
-            height: 2.8rem;
-            background: none;
-            border: none;
-            outline: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: -3.5rem;
-        }
-
-
-        #searchQuerySubmit:hover {
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="css/blogs.css">
 </head>
 <body>
     <div id="main">
@@ -123,70 +25,15 @@
                         </button>
                     </div>
                 </div>
-                
-                
 
                 <!-- Content Start -->
                 <div class="col-md-12">
                     <div class="col-md-12 page-body">
                         <div class="row">
                             <div class="col-md-12 content-page">
-
-                                <!-- Blog Post Start -->
-                                <div class="col-md-12 blog-post">
-                                    <div class="card">
-                                        <div class="post-title">
-                                            <a href="blogs/blog2.html"><h2>Leading Self Program: My DISC Report</h2></a>
-                                        </div>
-                                        <div class="post-info">
-                                            <span>Jun 28, 2023</span>
-                                        </div>
-                                        <div class="post-content">
-                                            <p>The DISC profile is a method used to understand human behavior and personality, providing insights into how individuals think, act, 
-                                                and interact with others in specific environments.</p>
-                                        </div>
-                                        <a href="blogs/blog2.html" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
-                                    </div>
+                                <div class="col-md-12 blog-container">
+                                    <!-- Blog posts will be dynamically loaded here -->
                                 </div>
-                                <!-- Blog Post End -->
-
-                                <!-- Blog Post Start -->
-                                <div class="col-md-12 blog-post">
-                                    <div class="card">
-                                        <div class="post-title">
-                                            <a href="blogs/blog1.html"><h2>Exploring PostgreSQL: My Learning Notebook</h2></a>
-                                        </div>
-                                        <div class="post-info">
-                                            <span>Dec 27, 2021</span>
-                                        </div>
-                                        <div class="post-content">
-                                            <p>This blog post serves as my personal notes on what I have learned about PostgreSQL. 
-                                                It covers the setup process of PostgreSQL and pgadmin4 and provides a comprehensive list 
-                                                of SQL keywords and examples. Additionally, I compare PostgreSQL and MySQL,and  discuss the 
-                                                distinctions between NoSQL and RDBMS.</p>
-                                        </div>
-                                        <a href="blogs/blog1.html" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
-                                    </div>
-                                </div>
-                                <!-- Blog Post End -->
-
-                                 <!-- Blog Post Start -->
-                                 <div class="col-md-12 blog-post">
-                                    <div class="card">
-                                        <div class="post-title">
-                                            <a href="blogs/blog3.html"><h2>Google Singapore Office Tour</h2></a>
-                                        </div>
-                                        <div class="post-info">
-                                            <span>Jan 11, 2019</span>
-                                        </div>
-                                        <div class="post-content">
-                                            <p> Google Singapore Office One-Day Tour.</p>
-                                        </div>
-                                        <a href="blogs/blog3.html" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
-                                    </div>
-                                </div>
-                                <!-- Blog Post End -->
-    
                             </div>
                         </div>
                     </div>
@@ -200,8 +47,54 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
     <script>
+        var blogData = [
+            {
+                title: "Leading Self Program: My DISC Report",
+                date: "Jun 28, 2023",
+                content: "The DISC profile is a method used to understand human behavior and personality, providing insights into how individuals think, act, and interact with others in specific environments.",
+                link: "blogs/blog2.html"
+            },
+            {
+                title: "Exploring PostgreSQL: My Learning Notebook",
+                date: "Dec 27, 2021",
+                content: "This blog post serves as my personal notes on what I have learned about PostgreSQL. It covers the setup process of PostgreSQL and pgadmin4 and provides a comprehensive list of SQL keywords and examples. Additionally, I compare PostgreSQL and MySQL,and  discuss the distinctions between NoSQL and RDBMS.",
+                link: "blogs/blog1.html"
+            },
+            {
+                title: "Google Singapore Office Tour",
+                date: "Jan 11, 2019",
+                content: "Google Singapore Office One-Day Tour.",
+                link: "blogs/blog3.html"
+            },
+        ];
+
+        var blogContainer = document.querySelector('.blog-container');
+
+        for (var i = 0; i < blogData.length; i++) {
+            var blogPost = document.createElement('div');
+            blogPost.className = 'col-md-12 blog-post';
+
+            blogPost.innerHTML = `
+                <div class="card">
+                    <div class="post-title">
+                        <a href="${blogData[i].link}"><h2>${blogData[i].title}</h2></a>
+                    </div>
+                    <div class="post-info">
+                        <span>${blogData[i].date}</span>
+                    </div>
+                    <div class="post-content">
+                        <p>${blogData[i].content}</p>
+                    </div>
+                    <a href="${blogData[i].link}" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
+                </div>
+            `;
+
+            blogContainer.appendChild(blogPost);
+        }
+
         $(document).ready(function() {
             $('#searchQueryInput').on('input', function() {
                 var searchText = $(this).val().toLowerCase();
