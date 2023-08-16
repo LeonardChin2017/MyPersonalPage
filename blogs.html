@@ -31,9 +31,17 @@
                     <div class="col-md-12 page-body">
                         <div class="row">
                             <div class="col-md-12 content-page">
-                                <div class="col-md-12 blog-container">
+                                <div class="col-md-12 blog-container" style = "margin-bottom: 50px;">
                                     <!-- Blog posts will be dynamically loaded here -->
                                 </div>
+                                <!-- Pagination controls -->
+                                <div class="pagination-container">
+                                    <div class="pagination">
+                                        <a href="#" class="prev-page">Previous</a>
+                                        <span class="page-number">Page 1</span>
+                                        <a href="#" class="next-page">Next</a>
+                                    </div>
+                                </div>                        
                             </div>
                         </div>
                     </div>
@@ -43,20 +51,54 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/blogdata.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts/blogdata.js"></script>
+    
     <script>
         var blogContainer = document.querySelector('.blog-container');
 
-        for (var i = 0; i < blogData.length; i++) {
-            var blogPost = document.createElement('div');
-            blogPost.className = 'col-md-12 blog-post';
+        var itemsPerPage = 2;
+        var currentPage = 1;
+        var totalPages = Math.ceil(blogData.length / itemsPerPage);
+        var prevPageLink = document.querySelector('.prev-page');
+        var nextPageLink = document.querySelector('.next-page');
+        var pageNumberSpan = document.querySelector('.page-number');
 
-            blogPost.innerHTML = `
+        function updatePagination() {
+            pageNumberSpan.textContent = `Page ${currentPage}`;
+            
+            // Show or hide "Previous" button
+            if (currentPage === 1) {
+                prevPageLink.style.display = 'none';
+            } else {
+                prevPageLink.style.display = 'inline';
+            }
+
+            // Show or hide "Next" button
+            if (currentPage === totalPages) {
+                nextPageLink.style.display = 'none';
+            } else {
+                nextPageLink.style.display = 'inline';
+            }
+        }
+
+
+        function updateBlogPosts() {
+            var startIndex = (currentPage - 1) * itemsPerPage;
+            var endIndex = startIndex + itemsPerPage;
+
+            blogContainer.innerHTML = '';
+
+            for (var i = startIndex; i < endIndex && i < blogData.length; i++) {
+                var blogPost = document.createElement('div');
+                blogPost.className = 'col-md-12 blog-post';
+
+                blogPost.innerHTML = `
                 <div class="card">
                     <div class="post-title">
                         <a href="${blogData[i].link}"><h2>${blogData[i].title}</h2></a>
@@ -69,10 +111,31 @@
                     </div>
                     <a href="${blogData[i].link}" class="read-more">Read More <i class="fas fa-long-arrow-right read-more-icon"></i></a>
                 </div>
-            `;
+				`;
 
-            blogContainer.appendChild(blogPost);
+                blogContainer.appendChild(blogPost);
+            }
+
+            updatePagination();
         }
+
+        prevPageLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                updateBlogPosts();
+            }
+        });
+
+        nextPageLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateBlogPosts();
+            }
+        });
+
+        updateBlogPosts();
 
         $(document).ready(function() {
             $('#searchQueryInput').on('input', function() {
@@ -87,7 +150,7 @@
                     }
                 });
             });
-         });
+        });
     </script>
 </body>
 </html>
