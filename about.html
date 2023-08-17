@@ -291,29 +291,34 @@
       });
 
       function calculateExperience() {
-          // Set the start date of your permanent job
-          const startDate = new Date('July 2019');
+        // Set the start date of your permanent job
+        const startDate = new Date('July 2019');
 
-          // Get the current date
-          const currentDate = new Date();
+        // Get the current date
+        const currentDate = new Date();
 
-          // Calculate the difference in years
-          const diffInYears = currentDate.getFullYear() - startDate.getFullYear();
+        // Calculate the difference in years
+        const diffInYears = currentDate.getFullYear() - startDate.getFullYear();
 
-          // Calculate the difference in months
-          const diffInMonths = currentDate.getMonth() - startDate.getMonth();
+        // Calculate the difference in months
+        const diffInMonths = currentDate.getMonth() - startDate.getMonth();
 
-          // Adjust the years if the current month is before the start month
-          if (diffInMonths < 0 || (diffInMonths === 0 && currentDate.getDate() < startDate.getDate())) {
-            return diffInYears - 1;
-          }
-
-          // Calculate the total experience in years
-          const totalExperience = diffInYears + diffInMonths / 12;
-
-          // Update the working experience element with the calculated value
-          document.getElementById('working-experience').textContent = totalExperience.toFixed(1) + ' years';
+        // Adjust the years if the current month is before the start month
+        if (diffInMonths < 0 || (diffInMonths === 0 && currentDate.getDate() < startDate.getDate())) {
+          return diffInYears - 1;
         }
+
+        // Calculate the total experience in years
+        const totalExperience = diffInYears + diffInMonths / 12;
+
+        // Update the working experience element with the calculated value
+        const workingExperienceElement = document.getElementById('working-experience');
+        if (!isNaN(totalExperience)) {
+          workingExperienceElement.textContent = totalExperience.toFixed(1) + ' years';
+        } else {
+          workingExperienceElement.textContent = '4++';
+        }
+      }
 
       // Call the calculateExperience function to update the working experience initially
       calculateExperience();
