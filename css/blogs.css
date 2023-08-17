@@ -137,6 +137,33 @@
     color: #000; /* Black color */
 }
 
+@media (max-width: 1024px) {
+    /* Center the pagination controls for tablet view (e.g., iPad) */
+    .pagination-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+        box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    .pagination {
+        justify-content: center; /* Center align pagination items */
+    }
+
+    .pagination a {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .page-number {
+        font-size: 16px;
+        margin: 0;
+    }
+}
+
 @media (max-width: 768px) {
     /* Center the pagination controls for mobile view */
     .pagination-container {
