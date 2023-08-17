@@ -126,7 +126,7 @@
             <div class="rounded-rectangle">
               <i class="fas fa-briefcase"></i>
               <h4>Working Experience</h4>
-              <p id="working-experience">4 years</p>
+              <p>4 years ++ </p>
             </div>
           </div>          
           <div class="col">
@@ -305,7 +305,7 @@
 
         // Adjust the years if the current month is before the start month
         if (diffInMonths < 0 || (diffInMonths === 0 && currentDate.getDate() < startDate.getDate())) {
-          return diffInYears - 1;
+            return diffInYears - 1;
         }
 
         // Calculate the total experience in years
@@ -314,14 +314,15 @@
         // Update the working experience element with the calculated value
         const workingExperienceElement = document.getElementById('working-experience');
         if (!isNaN(totalExperience)) {
-          workingExperienceElement.textContent = totalExperience.toFixed(1) + ' years';
+            workingExperienceElement.textContent = totalExperience.toFixed(1) + ' years';
         } else {
-          workingExperienceElement.textContent = '4++';
+            workingExperienceElement.textContent = '4++';
         }
-      }
+    }
 
-      // Call the calculateExperience function to update the working experience initially
-      calculateExperience();
+    // Call the calculateExperience function to update the working experience initially
+    calculateExperience();
+
 
 
 
