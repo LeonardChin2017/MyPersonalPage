@@ -136,17 +136,50 @@ a {
     }
   }
 
+.apple-style-link {
+  display: none; /* Hide the text by default */
+  text-align: center;
+  font-size: 1.5em; 
+  color: white;
+  padding: 10px 0; 
+  position: absolute;
+  top: -10px; /* Move the link upward by 10px */
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100%;
+}
+
+
+@media (max-width: 990px) {
+  .apple-style-link {
+    display: block;
+  }
+
+  .tag {
+    display: none;
+  }
+
+  .mobile-new-text {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    padding: 10px 0;
+    position: relative; 
+  }
+}
+
    @media (max-width: 768px) {
       position: absolute;
       top: 10px;
-      left: 50px; /* Adjust this value to set the desired distance from the hamburger icon */
+      left: 50px;
       display: flex;
       align-items: center;
       font-family: Lato, Helvetica, Arial, sans-serif;
       font-size: 1.5em;
       height: 60px;
       letter-spacing: 1px;
-      margin-top: -10px; /* Adjust this value to move it up or down */
+      margin-top: -10px; 
 
     }
   
@@ -160,7 +193,7 @@ a {
     line-height: 60px;
     width: 100vw;
     z-index: 10;
-    user-select: none; /* Disable text selection */
+    user-select: none; 
   }  
   
   .nav-wrapper {
@@ -239,11 +272,10 @@ a {
   }
   
   #navbar li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
-    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: rgba(255, 255, 255, 0.8); 
   }
   
-  /* Animated Bottom Line */
   #navbar li a:before,
   #navbar li a:after {
     content: '';
@@ -282,7 +314,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.1); 
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s;
