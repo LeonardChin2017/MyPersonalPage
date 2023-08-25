@@ -75,7 +75,7 @@
       <li><a onclick='setIframeSrc("blogs.html", "My Blogs")'>Blogs</a></li>
     </ul>
     
-    <iframe src="about.html" class="iframe_layout" id="MainPageContainer" scrolling="no"></iframe>
+    <iframe src="about.html" class="iframe_layout" id="MainPageContainer" scrolling="no" onload="adjustIframeHeight(this)"></iframe>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -237,6 +237,16 @@
         // Send the search query to the blogs iframe using postMessage
         blogsIframe.contentWindow.postMessage(searchQuery, '*');
       });
+
+      function adjustIframeHeight(iframe) {
+        // Get the iframe's content window
+        var iframeWin = iframe.contentWindow || iframe.contentDocument.defaultView;
+
+        // Set the iframe's height to the height of its content
+        if (iframeWin.document.body) {
+          iframe.style.height = iframeWin.document.documentElement.scrollHeight + 'px';
+        }
+      }
 
     </script>        
   </body>
