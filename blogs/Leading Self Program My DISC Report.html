@@ -12,6 +12,7 @@
             margin: 0;
             padding: 20px;
             line-height: 1.5;
+            text-align: justify; 
         }
         
         h1, h2, h3 {
@@ -87,6 +88,64 @@
                 display: block;
             }
         }
+
+        .personality-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .personality-card {
+            padding: 20px;
+            background-color: #f5f5f5; /* Light gray background color */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333333; /* Dark text color for better readability */
+        }
+
+        .style-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .style-description {
+            font-size: 1em;
+            color: #777777; /* Slightly lighter text color for description */
+            line-height: 1.4; /* Improved line spacing for easier reading */
+        }
+
+        .growth-areas {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f5f5f5; /* Light gray background color */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #333333;
+        }
+
+        .growth-title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .growth-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .growth-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .growth-icon {
+            margin-right: 10px;
+            font-size: 1.5em;
+            color: #007AFF;
+        }
     </style>
 </head>
 <body>
@@ -111,10 +170,40 @@
           collaborate with different styles, ultimately strengthening relationships and promoting overall effectiveness in a variety of 
           settings.</p>
 
-        <p> <b>D (Dominance):</b> Individual emphasizes on getting jobs done; goal oriented; confident.</p>
-        <p> <b>I (Influence):</b> Individual emphasizes on influencing or persuading people; enthusiastic; emotional.</p>
-        <p> <b>S (Steadiness):</b> Individual emphasizes on being supportive; harmonious; steady.</p>
-        <p> <b>C (Compliance):</b> Individual emphasizes on quality and accuracy; careful; high standards.</p>
+          <div class="personality-grid">
+            <div class="personality-card">
+                <div class="style-title">Dominance (D) 🚀</div>
+                <div class="style-description">
+                    People with a Dominance style are the go-getters. They thrive on accomplishing tasks, setting goals, and
+                    radiate confidence. Their motto is: "<i>Let's get things done!</i>"
+                </div>
+            </div>
+    
+            <div class="personality-card">
+                <div class="style-title">Influence (I) 🎉</div>
+                <div class="style-description">
+                    Influence-style individuals are the social butterflies. They love to connect with and sway others. Their
+                    enthusiasm and emotions are infectious, making them natural persuaders.
+                </div>
+            </div>
+    
+            <div class="personality-card">
+                <div class="style-title">Steadiness (S) 🤝</div>
+                <div class="style-description">
+                    The Steadiness style is all about harmony and support. These individuals value stability and consistency.
+                    They're like the calm in the storm, always there to lend a hand.
+                </div>
+            </div>
+    
+            <div class="personality-card">
+                <div class="style-title">Compliance (C) 📚</div>
+                <div class="style-description">
+                    Compliance-oriented folks are the meticulous perfectionists. They set high standards and focus on
+                    accuracy. Quality is their top priority, and they approach tasks with care.
+                </div>
+            </div>
+            
+        </div>
 
         <h2><u>About My DISC Report</u></h2>
         <p> Based on the DISC report, I am a Designer Style (C & D, but predominately C). As a Designer, I am a highly task-oriented individual who is sensitive to problems. People often perceive 
@@ -167,7 +256,7 @@
           <li>Recognition for their analytical abilities</li>
         </ul>
 
-        <h2><u>About My Personal Growth Areas as Designer (CD) Style</u></h2>
+        <h2><u>My Personal Growth Areas as CD Style</u></h2>
         <ul>
           <li>Strive to be an "active" listener.</li>
           <li>Be attentive to other team members' ideas until everyone reaches a consensus.</li>
@@ -175,39 +264,6 @@
           <li>Develop a greater appreciation for the opinions, feelings and desires of others.</li>
           <li>Put more energy into personal relationships and team support.</li>
         </ul>
-
-        <h2><u>My Strengths in Leadership</u></h2>
-        <h4> INFLUENCING </h4>
-        <p> <b>Adequate</b>: Leading and influencing others is something that comes easier for others, but you are willing to step up to the role 
-            when no one else volunteers. You prefer an association with a strong leader who has the same goals and values that you do.</p>
-
-        <h4> DIRECTING </h4>
-        <p> <b>Main Focus</b>: Others view you as someone who gets things done, but someone who values them more for what they can do than 
-          who they are. Remember that asking is better than telling.Relating to others is often as important as accomplishing the goal; 
-          try to be more approachable.Take time to develop relationships and be more transparent about yourself. 
-          Others see you as independent at times; they want you to be more of a team member with whom they can relate.</p>
-
-        <h4> PROCESSING </h4>
-        <p> <b>Well Developed</b>: You like to be "hands on" and are great at following through and finishing strong. Others rely on you to make a 
-          system really work the way it was intended. You may have a hard time delegating at times, but you are willing to delegate when 
-          a project is larger than you can handle. Others see you as loyal and caring and a real team player.</p>
-
-        <h4> DETAILING </h4>
-        <p> <b>Extreme Focus</b>: You need to live life and be more spontaneous in things you do. You tend to over analyze details to the 
-          point of not doing anything at all about the situation. You tend to always be operating under the "Ready, Ready, Ready" approach. 
-          Try "Ready, Aim, Fire!" Decide to do something fun and spontaneous, make a new friend or go somewhere new and exciting.</p>
-
-        <h4> CREATING </h4>
-        <p> <b>Above Average</b>: You like to use your creativity to perfect basic concepts that other team members develop. You can oversee 
-          and help keep accountability in areas that others may compromise.</p>
-
-        <h4> PERSISTING </h4>
-        <p> <b>Above Average</b>: Others like working together with you because you typically do more than your share of whatever is required
-          and this makes the entire team look good. You will maintain a hands-on approach and let others visibly see that you are a team player.</p>
-        
-        <h4> RELATING </h4>
-        <p> <b>Fair</b>: You sometimes say the wrong thing or nothing at all, but you find the necessary tools to maintain good relationships.
-          Try to understand more about others' styles and how they like to communicate. The DISC system should give you a better understanding in these areas.</p>
     </div>
 </body>
 </html>
