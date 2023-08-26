@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .back-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Event Based vs Polling</h1>
+            <p class="post-date">Published on June 24, 2023</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <p> 
+            This blog is to record my thought and study when deciding whether my SW modules should use event based or polling
+            when receiving signal from other SW components. 
+        </p>
+        
+        <h3>Background</h3>
+        <p> My module will be used in automotive, real time embedded devices. It has timing requirement. Order matter.</p>
+        
+        <h3>Subsection</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam semper urna, nec semper odio accumsan ac. Fusce fermentum malesuada sapien, sed semper dolor molestie a. Quisque vehicula leo et leo consectetur, eu aliquet mauris commodo. Nunc eu faucibus lacus, eu cursus lectus.</p>
+        
+        <h2>Conclusion</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam semper urna, nec semper odio accumsan ac. Fusce fermentum malesuada sapien, sed semper dolor molestie a. Quisque vehicula leo et leo consectetur, eu aliquet mauris commodo. Nunc eu faucibus lacus, eu cursus lectus.</p>
+        
+        <p>Thank you for reading! If you have any comments or questions, feel free to <a href="mailto:example@example.com">contact me</a>.</p>
+    </div>
+</body>
+</html>
