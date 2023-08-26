@@ -12,6 +12,12 @@ var blogData = [
         link: "blogs/Exploring PostgreSQL My Learning Notebook.html"
     },
     {
+        title: "Software Design: Event Based vs Polling",
+        date: "Jan 20, 2021",
+        content: "TBD",
+        link: "blogs/Event Based vs Polling.html"
+    },
+    {
         title: "Google Singapore Office Tour",
         date: "Jan 11, 2019",
         content: "Google Singapore Office One-Day Tour.",
