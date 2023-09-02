@@ -103,21 +103,31 @@
         .card h1, .card h2, .card h3 {
             color: #fff;
         }
+
+        th {
+            background-color: transparent; /* Remove white background for table header */
+        }
+
+        .card table {
+            width: auto; /* Adjust table width to fit within the card */
+        }
+
+        th, td {
+            border-right: 1px solid #e0e0e0; /* Add right border to all table cells */
+        }
     </style>
 </head>
 <body>
     <div class="post">
         <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
         <div class="post-header">
-            <h1>Machine Learning - A Brief Introduction</h1>
+            <h1>What is Neural Network?</h1>
             <p class="post-date">Published on Feb 11, 2022</p>
         </div>
 
         <h2>AI vs ML vs DL</h2>
         <p>
-            In the world of technology, terms like AI, ML, and DL are often used interchangeably.
-            However, they hold distinct meanings and applications that are worth understanding.
-            Let's delve into the differences between these three concepts.
+            Understanding neural networks is key in the world of AI. These networks, inspired by the human brain, play a pivotal role in machine learning, powering applications like image recognition and natural language processing. While terms like AI, ML, and DL are often used interchangeably, they have unique meanings and uses. Let's explore the differences among them.
         </p>
         
         <div class="card">
@@ -138,7 +148,7 @@
                 DL, a subset of ML, employs deep neural networks to learn intricate patterns from data. Inspired by the brain, these networks autonomously excel at complex feature learning. Examples: CNN for image analysis, RNN for sequences, GAN for creative generation.
             </p>
 
-            <img src="../resource/images/ML vs DL.png">
+            ç
         </div>
         
         <h2> Perceptron vs Neuron</h2>
@@ -147,6 +157,7 @@
                 Perceptron is an early type of neural network, that always produced binary output based on a threshold. Thus it is also known as a Linear Binary Classifier. 
                 Neurons is a generalisation of the idea of perceptron where the output is not necessarily binary, and it could employ a non-linear activation function.  
             </p>
+            <img src="../resource/images/neuron.PNG">
         </div>
 
         <h2> Deep Dive into Neural Network </h2>
@@ -158,11 +169,131 @@
                 Output neurons process the information and provide results, like saying "yes" or "no" or guessing what's in an image. These results can be used as final answers or sent to another neural network.
                 <img src="../resource/images/neural network.png">
             </p>
+
+            <h3> Forward Propagation </h3>
+            <p> Forward propagation is like sending a message through a network. You start with input data and move it forward, layer by layer. Each layer does some math on the data. Think of it as passing the data to a friend, and they make it better by doing some calculations.
+
+                In each layer, two important things happen. First, we calculate a weighted sum, which is like adding up the data with special numbers. Then, we use these special numbers to make the data flow in a non-straight path. It's like adding a twist to the story. This whole process helps the network make better predictions or decisions.
+                
+                When we go backward from the Output to the Input layer, it's called Backward Propagation.
+            </p>
+
+            <h3> Backward Propagation </h3>
+            <p>Backpropagation is closely tied to forward propagation in neural networks. Forward propagation is the initial step where the network processes data from input to output, making predictions. During this process, the network may produce errors in its predictions. Backpropagation comes into play after the forward propagation is complete. It works backward through the network, using the errors detected in the forward pass to adjust the network's internal settings (weights) from output to input. This iterative process of forward and backward passes helps the network improve its accuracy over time, making it a key component of neural network training. In simple terms, forward propagation makes predictions, and backpropagation corrects and refines those predictions to make the network better.</p>
+        
+            <h3> Gradient Descent </h3>
+            <p>
+                Gradient descent, a fundamental component of training neural networks, plays a crucial role in refining their predictive abilities. It relies on the insights provided by backpropagation to calculate gradients, which essentially guide the network towards the optimal weight configuration that minimizes the cost function. The learning rate, a key parameter in gradient descent, determines the step size taken along the gradient, influencing how swiftly the network converges to the best weights. This dynamic interplay between backpropagation and gradient descent ensures neural networks continually enhance their accuracy by iteratively adjusting their internal parameters to reduce prediction errors during training.
+            </p>
+            <img src="../resource/images/Gradient Descent.PNG">
+
+            <h3> Cost Function </h3>
+            <p> 
+                A cost function is a crucial tool in assessing a machine learning model's performance, quantifying the disparity between predicted and expected values as a single number. Depending on the problem, cost functions can take various forms and aim to be either minimized or maximized. They play a vital role in algorithms that use gradient descent for parameter optimization, requiring differentiability. For instance, consider a linear regression problem where the cost function could be the mean squared error, measuring the average squared difference between predicted and actual values. After training a model, the need arises to evaluate its performance, especially when accuracy metrics fall short in guiding improvement. The cost function steps in to identify the sweet spot between undertraining and overtraining, helping to optimize the model's performance. In essence, cost functions provide a roadmap for improvement in the model's understanding of the input-output relationship, ensuring it finds the most accurate and valuable patterns in the data.
+            </p>
+            <img src="../resource/images/Cost Function Example1.PNG">
+
+            <p>
+                Cost functions play a critical role in machine learning. They don't always need to square errors, but squaring errors is common because it aids in optimization. It makes the cost function smoother, more mathematically tractable, and sensitive to outliers. However, different problems may require different cost functions. For instance, in classification tasks, we often use cross-entropy to assess how well a model predicts probabilities. Below are some examples of cost functions used in various machine learning scenarios:
+            
+            </p>
+            <table border="1">
+                <tr>
+                    <th>Cost Function</th>
+                    <th>Typical Use Scenario</th>
+                </tr>
+                <tr>
+                    <td>Mean Squared Error Loss</td>
+                    <td>Commonly used in regression tasks to measure the average squared difference between predicted and actual values.</td>
+                </tr>
+                <tr>
+                    <td>Mean Squared Logarithmic Error Loss</td>
+                    <td>Useful for regression tasks when you want to weigh errors differently, often used in financial modeling.</td>
+                </tr>
+                <tr>
+                    <td>Mean Absolute Error Loss</td>
+                    <td>Another choice for regression problems when you want to measure the average absolute difference between predicted and actual values.</td>
+                </tr>
+                <tr>
+                    <td>Binary Cross-Entropy</td>
+                    <td>Typically employed in binary classification problems to measure how well the model predicts probabilities for two classes.</td>
+                </tr>
+                <tr>
+                    <td>Hinge Loss</td>
+                    <td>Commonly used in support vector machines (SVMs) and binary classification problems to encourage correct classification with a margin.</td>
+                </tr>
+                <tr>
+                    <td>Squared Hinge Loss</td>
+                    <td>A variant of hinge loss, useful in SVMs for binary classification with squared margins.</td>
+                </tr>
+                <tr>
+                    <td>Multi-Class Cross-Entropy Loss</td>
+                    <td>Typically used in multi-class classification problems to measure the difference between predicted and actual class distributions.</td>
+                </tr>
+                <tr>
+                    <td>Sparse Multiclass Cross-Entropy Loss</td>
+                    <td>Similar to multi-class cross-entropy but suited for cases where classes are sparse or imbalanced.</td>
+                </tr>
+                <tr>
+                    <td>Kullback Leibler Divergence Loss</td>
+                    <td>Used in scenarios where you want to measure the difference between two probability distributions, often seen in generative models.</td>
+                </tr>
+            </table>
+            
+            <p>
+                Selecting the right cost function is crucial for effective model training, and these examples demonstrate the diversity of cost functions available in machine learning.
+            </p>
+            
+            <h3> Activation Function </h3>
+            <p> <p>
+                An activation function in a neural network decides whether a neuron should be activated or not by calculating the weighted sum and adding bias to it. Its main purpose is to introduce non-linearity into the output of a neuron.
+            </p>
+            
+            <p>
+                In a neural network, we update the weights and biases of neurons based on errors at the output using a process known as back-propagation. Activation functions play a crucial role in this process by enabling the network to learn complex representations. Without them, a neural network would essentially behave like a linear regression model.
+            </p>
+            
+            <p>
+                There's a reason why we need non-linear activation functions. A neural network without them is essentially just a linear model. Nonlinear activation functions allow the network to learn and perform more complex tasks. Here are some examples of commonly used activation functions and their typical scenarios:
+            </p>
+            
+            <table border="1">
+                <tr>
+                    <th>Activation Function</th>
+                    <th>Typical Use Scenario</th>
+                </tr>
+                <tr>
+                    <td>Sigmoid Function</td>
+                    <td>Often used in binary classification problems because it squashes the output between 0 and 1, resembling a probability.</td>
+                </tr>
+                <tr>
+                    <td>Hyperbolic Tangent (tanh) Function</td>
+                    <td>Similar to the sigmoid but squashes output between -1 and 1, making it suitable for zero-centered data.</td>
+                </tr>
+                <tr>
+                    <td>Rectified Linear Unit (ReLU) Function</td>
+                    <td>Widely used in deep learning due to its simplicity and efficiency. It is effective in scenarios where sparse representations are useful.</td>
+                </tr>
+            </table>
+
+            <h4> Sigmoid </h4>
+            <img src="../resource/images/sigmoid.PNG">
+
+            <h4> Hyperbolic Tangent </h4>
+            <img src="../resource/images/Hyperbolic Tangent.PNG">
+
+            <h4> ReLU </h4>
+            <img src="../resource/images/RELU.PNG">
+            
+            </p>
         </div>
 
         <h2> References </h2>
-        <a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53">https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53</a><br>
-        <a href="https://levity.ai/blog/difference-machine-learning-deep-learning">https://levity.ai/blog/difference-machine-learning-deep-learning</a>
+        <a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53">https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53</a>
+        <br><a href="https://levity.ai/blog/difference-machine-learning-deep-learning">https://levity.ai/blog/difference-machine-learning-deep-learning</a>
+        <br><a href="https://www.kdnuggets.com/2016/11/quick-introduction-neural-networks.html">https://www.kdnuggets.com/2016/11/quick-introduction-neural-networks.html</a>
+    
+    
     </div>
 </body>
 </html>
