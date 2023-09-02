@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+
+        .text_center{
+            text-align: center; 
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 10px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            max-width: 100%; /* Scale the image to fit its container */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Add some spacing below the image */
+        }
+
+        .card h1, .card h2, .card h3 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Machine Learning - A Brief Introduction</h1>
+            <p class="post-date">Published on Feb 11, 2022</p>
+        </div>
+
+        <h2>AI vs ML vs DL</h2>
+        <p>
+            In the world of technology, terms like AI, ML, and DL are often used interchangeably.
+            However, they hold distinct meanings and applications that are worth understanding.
+            Let's delve into the differences between these three concepts.
+        </p>
+        
+        <div class="card">
+            <h3 class="text_center">AI (Artificial Intelligence)</h3>
+            <p>
+                AI is the broader goal of creating intelligent machines, involving software that replicates human-like intelligence through predefined rules. Examples include virtual assistants like Siri, self-driving cars, and more. AI automates tasks, reasoning, and learning from data. It includes subsets like Machine Learning, Robotics, Natural Language Processing, Machine Vision, and Expert Systems.
+            </p>
+
+            <img src="../resource/images/AI subsets.png">
+        
+            <h3 class="text_center">ML (Machine Learning)</h3>
+            <p>
+                Machine Learning (ML) is a part of AI where algorithms learn from data instead of following fixed rules. Unlike traditional AI, which uses predefined rules, ML algorithms find patterns, make predictions, and offer suggestions based on past experiences. For instance, Netflix suggests shows based on your watching history, and fraud detection spots unusual transactions. ML improves with more data, letting systems learn and grow from data-driven insights.
+            </p>
+
+            <h3 class="text_center">DL (Deep Learning)</h3>
+            <p>
+                DL, a subset of ML, employs deep neural networks to learn intricate patterns from data. Inspired by the brain, these networks autonomously excel at complex feature learning. Examples: CNN for image analysis, RNN for sequences, GAN for creative generation.
+            </p>
+
+            <img src="../resource/images/ML vs DL.png">
+        </div>
+        
+        <h2> Perceptron vs Neuron</h2>
+        <div class="card">
+            <p>
+                Perceptron is an early type of neural network, that always produced binary output based on a threshold. Thus it is also known as a Linear Binary Classifier. 
+                Neurons is a generalisation of the idea of perceptron where the output is not necessarily binary, and it could employ a non-linear activation function.  
+            </p>
+        </div>
+
+        <h2> Deep Dive into Neural Network </h2>
+        <div class="card">
+            <p>
+                In software engineering, think of artificial neural networks like a chain of circles. These circles represent neurons, and they come in three types: input (red), hidden (blue), and output (green).
+                Input neurons take numeric data, process it, and pass it to the next layer using special math functions. They also use preset weights to adjust the data along the way.
+                Hidden neurons get data from input or other hidden neurons, do their own math magic, and send it to the next layer. Again, they use weights to fine-tune the data.
+                Output neurons process the information and provide results, like saying "yes" or "no" or guessing what's in an image. These results can be used as final answers or sent to another neural network.
+                <img src="../resource/images/neural network.png">
+            </p>
+        </div>
+
+        <h2> References </h2>
+        <a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53">https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53</a><br>
+        <a href="https://levity.ai/blog/difference-machine-learning-deep-learning">https://levity.ai/blog/difference-machine-learning-deep-learning</a>
+    </div>
+</body>
+</html>
