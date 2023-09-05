@@ -317,6 +317,46 @@
                     <td>Randomly deactivates a fraction of neurons during each training step, preventing co-adaptation and improving generalization.</td>
                 </tr>
             </table>
+
+            <h3> Optimization in Neural Network </h3>
+            <p>
+                Optimizers are algorithms or methods used to adjust the attributes of your neural network, such as weights and learning rate, in order to minimize losses.
+            </p>
+            
+            <table border="1">
+                <tr>
+                    <th>Optimizer</th>
+                    <th>Brief Explanation</th>
+                </tr>
+                <tr>
+                    <td>Gradient Descent</td>
+                    <td>The most fundamental optimization technique that uses gradients to iteratively adjust weights to minimize the loss function.</td>
+                </tr>
+                <tr>
+                    <td>Stochastic Gradient Descent (SGD)</td>
+                    <td>A variant of gradient descent that updates weights using a random subset of the training data at each iteration, often leading to faster convergence.</td>
+                </tr>
+                <tr>
+                    <td>Mini-Batch Gradient Descent</td>
+                    <td>Combines the benefits of both gradient descent and SGD by updating weights using small, random batches of training data.</td>
+                </tr>
+                <tr>
+                    <td>Adam (Adaptive Moment Estimation)</td>
+                    <td>An optimizer that adapts the learning rate for each parameter and combines the advantages of both momentum and RMSprop.</td>
+                </tr>
+                <tr>
+                    <td>RMSprop (Root Mean Square Propagation)</td>
+                    <td>An optimizer that adapts the learning rate for each parameter based on the magnitude of recent gradients.</td>
+                </tr>
+                <tr>
+                    <td>Momentum</td>
+                    <td>Enhances gradient descent by adding a fraction of the previous weight update to the current update, helping to overcome local minima.</td>
+                </tr>
+                <tr>
+                    <td>Adagrad (Adaptive Gradient Algorithm)</td>
+                    <td>Adapts the learning rates for each parameter based on the historical gradient information, benefiting from larger updates for infrequent parameters.</td>
+                </tr>
+            </table>
             
         </div>
 
