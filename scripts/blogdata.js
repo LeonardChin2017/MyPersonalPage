@@ -6,10 +6,10 @@ var blogData = [
         link: "blogs/Leading Self Program My DISC Report.html"
     },
     {
-        title: "Machine Learning",
+        title: "What is Neural Network?",
         date: "Feb 11, 2022",
-        content: "Machine Learning Brief Introduction.",
-        link: "blogs/Machine Learning.html"
+        content: "Neural Network Brief Introduction.",
+        link: "blogs/What is Neural Network.html"
     },
     {
         title: "Exploring PostgreSQL: My Learning Notebook",
