@@ -6,6 +6,12 @@ var blogData = [
         link: "blogs/Leading Self Program My DISC Report.html"
     },
     {
+        title: "What is Neural Network?",
+        date: "Feb 11, 2022",
+        content: "Neural Network Brief Introduction.",
+        link: "blogs/What is Neural Network.html"
+    },
+    {
         title: "Exploring PostgreSQL: My Learning Notebook",
         date: "Dec 27, 2021",
         content: "This blog post serves as my personal notes on what I have learned about PostgreSQL. It covers the setup process of PostgreSQL and pgadmin4 and provides a comprehensive list of SQL keywords and examples. Additionally, I compare PostgreSQL and MySQL, and discuss the distinctions between NoSQL and RDBMS.",
