@@ -8,7 +8,7 @@ var blogData = [
     {
         title: "What is Neural Network?",
         date: "Feb 11, 2022",
-        content: "Neural Network Brief Introduction.",
+        content: "This blog explains what neural networks are and how they're used in artificial intelligence and machine learning. It also shows the differences between AI, ML, and deep learning and talks about how neural networks have changed over time. It helps you understand important ideas like how data moves through neural networks, how they learn from mistakes, and how they can be improved.",
         link: "blogs/What is Neural Network.html"
     },
     {
