@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+
+        .text_center{
+            text-align: center; 
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 10px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: block; /* Add this to center the image horizontally */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card h1, .card h2, .card h3 {
+            color: #fff;
+        }
+
+        th {
+            background-color: transparent; /* Remove white background for table header */
+        }
+
+        .card table {
+            width: auto; /* Adjust table width to fit within the card */
+        }
+
+        th, td {
+            border-right: 1px solid #e0e0e0; /* Add right border to all table cells */
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Docker: The Fundamentals</h1>
+            <p class="post-date">Published on Sept 25, 2023</p>
+        </div>
+
+        <p> 
+            At long last, I've found the time to delve into the core concepts of Docker in my blog. Docker has become a ubiquitous presence in the software industry. But what exactly is Docker? Docker is, at its core, a container runtime. (Other well-known container runtimes include Podman and CRI-O.) These container runtimes serve as an intermediary layer positioned between the host operating system and individual container instances.
+        </p>
+
+        <p>
+            But let's back up a bit. What is a container? A container is a technology that empowers us to isolate specific kernel processes, effectively convincing them that they are the sole inhabitants of an entirely new computer. Containers stand in stark contrast to virtual machines. While a virtual machine requires an entire guest operating system to be installed within the host operating system, a container shares the host OS kernel and merely carries its distinct set of binaries. In simpler terms, there's no need for a completely separate operating system (a guest OS) within your host OS. This key difference eliminates one of the most significant drawbacks of virtual machines. It's worth noting that the computational overhead associated with virtualizing hardware for a guest OS is substantial.
+        </p>
+
+        <p>
+            Containers offer another impressive advantage: they can gracefully terminate and re-emerge when load balancing demands it. Whether a container ceases to exist due to a crash or because it's no longer needed during periods of low server traffic, containers are cost-effective to launch, and they are designed to appear and disappear seamlessly.
+        </p>
+
+        <h2> Installation </h2>
+        <hr>
+        <p> For installation, simply refer to the official Docker page: https://docs.docker.com/desktop/install/windows-install/</p>
+
+        <p> After installation, you should be able to launch Docker Desktop. </p>
+        <img src="../resource/images/docker_window.jpg">
+
+        <h3> Basic instructions in Dockerfile </h3>
+        <p> Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Below describes the commands you can use in a Dockerfile.</p>
+        <table border="1">
+            <tr>
+                <th>Instruction</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>FROM [IMAGE]</td>
+                <td>A Dockerfile must start with a FROM instruction, specifying the underlying OS architecture for building the image. You need to choose a base image, such as Ubuntu, CentOS, or a minimal Linux image like Alpine (only 5MB). The goal is to install only the necessary packages, avoiding unnecessary bloat and resulting in smaller Docker images compared to full-fledged OS distributions.</td>
+            </tr>
+            <tr>
+                <td>COPY [SRC] [DEST]</td>
+                <td>The COPY instruction duplicates files or directories from SRC and integrates them into the container's file system at the path DEST.</td>
+            </tr>
+            <tr>
+                <td>ADD [SRC] [DEST]</td>
+                <td>The ADD command is used to incorporate files or directories into a Docker image.</td>
+            </tr>
+            <tr>
+                <td>CMD</td>
+                <td>Sets default parameters that can be overridden through the Docker Command Line Interface (CLI) when the container is running.</td>
+            </tr>
+            <tr>
+                <td>ENTRYPOINT</td>
+                <td>Defines default parameters that cannot be altered when Docker containers are executed with CLI parameters.</td>
+            </tr>
+            <tr>
+                <td>RUN [COMMANDS]</td>
+                <td>Mainly used to construct images and install applications and packages. It creates a new layer atop an existing image by recording the outcomes of the commands.</td>
+            </tr>
+            <tr>
+                <td>EXPOSE [PORT]</td>
+                <td>The EXPOSE instruction opens the specified port for inter-container communication. To illustrate, if you have two containers, a Node.js application, and a Redis server, the Redis container must expose its port. This enables communication between the two containers. For example, the official Redis image's Dockerfile contains the line "EXPOSE 6379," facilitating communication between containers.</td>
+            </tr>
+            <tr>
+                <td>VOLUME</td>
+                <td>The VOLUME instruction establishes a mount point with the given name and designates it as a location for externally mounted volumes from the host or other containers. You can specify the value as a JSON array (e.g., VOLUME ["/var/log/"]) or as a plain string with multiple arguments (e.g., VOLUME /var/log or VOLUME /var/log /var/db). Volumes separate the lifespan of stored data from the container that created them. This allows you to remove a Docker container (e.g., "docker rm my_container") without affecting your data.</td>
+            </tr>
+        </table>        
+
+        <h3>Additional Note</h3>
+        <hr>
+        <ul>
+          <li>You can use "docker rmi -f IMAGEID" to remove dangling image.</li>
+          <li>When crafting a Dockerfile, you have two options for copying files or directories into it: ADD and COPY commands.</li>
+            <ul>
+              <li> While they share a similar purpose, they do have subtle differences.</li>
+              <li>The ADD command, the older of the two, copies files or directories into the container's file system, supporting local and URL sources, even automatically extracting compressed files when sourced locally.</li>
+              <li>In contrast, the COPY command was introduced to address some limitations of ADD, offering a more straightforward approach by only duplicating files or directories in their current format, exclusively supporting locally stored content.</li>
+              <li>Docker's best practices recommend using COPY over ADD for transparency, especially when copying from the local build context into a container.</li>
+              <li>They also suggest avoiding ADD for downloading and copying packages from URLs, recommending the use of wget or curl within a RUN command to save space and minimize image layers.</li>
+            </ul>
+          </li>
+        </ul>
+        
+
+
+
+
+
+        </p>
+    
+    
+    </div>
+</body>
+</html>

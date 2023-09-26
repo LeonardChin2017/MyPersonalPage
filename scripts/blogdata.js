@@ -1,5 +1,11 @@
 var blogData = [
     {
+        title: "Docker: The Fundamentals",
+        date: "Sept 25, 2023",
+        content: "In this blog, we'll dive into Docker, a tool that makes software work smoothly. We'll first understand how Docker acts like a 'container', holding software neatly. Then, we'll learn some basic tricks, like how to build these containers with Dockerfiles. If you're new to Docker, don't worry – this blog is your friendly guide to get started and make your software life easier.",
+        link: "blogs/docker.html"
+    },
+    {
         title: "Leading Self Program: My DISC Report",
         date: "Jun 28, 2023",
         content: "The DISC profile is a method used to understand human behavior and personality, providing insights into how individuals think, act, and interact with others in specific environments.",
@@ -8,7 +14,7 @@ var blogData = [
     {
         title: "What is Neural Network?",
         date: "Feb 11, 2022",
-        content: "This blog explains what neural networks are and how they're used in artificial intelligence and machine learning. It also shows the differences between AI, ML, and deep learning and talks about how neural networks have changed over time. It helps you understand important ideas like how data moves through neural networks, how they learn from mistakes, and how they can be improved.",
+        content: "This blog explains neural networks, their role in AI and machine learning, and how they've evolved. It clarifies distinctions between AI, ML, and deep learning, delves into data flow, learning from errors, and ways to enhance neural networks, making complex concepts accessible.",
         link: "blogs/What is Neural Network.html"
     },
     {
