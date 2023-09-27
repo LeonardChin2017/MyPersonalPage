@@ -3,7 +3,7 @@ var blogData = [
         title: "Docker: The Fundamentals",
         date: "Sept 25, 2023",
         content: "In this blog, we'll dive into Docker, a tool that makes software work smoothly. We'll first understand how Docker acts like a 'container', holding software neatly. Then, we'll learn some basic tricks, like how to build these containers with Dockerfiles. If you're new to Docker, don't worry – this blog is your friendly guide to get started and make your software life easier.",
-        link: "blogs/docker.html"
+        link: "blogs/DockerFundamental.html"
     },
     {
         title: "Leading Self Program: My DISC Report",
