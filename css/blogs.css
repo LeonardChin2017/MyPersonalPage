@@ -78,7 +78,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Horizontally center the items */
+    justify-content: center; 
+    margin-left: 20px; 
+    margin-right: 20px; 
 }
 
 #searchQueryInput {
