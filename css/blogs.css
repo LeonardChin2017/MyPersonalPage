@@ -148,6 +148,7 @@
     border-radius: 4px;
     margin: 0 5px;
     transition: background-color 0.2s, color 0.2s;
+    user-select: none;
 }
 
 .pagination a:hover {
