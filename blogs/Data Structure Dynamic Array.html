@@ -213,15 +213,27 @@ print("Element at index 0:", dynamic_array[0])
     </table>
 
     <p>
-        <strong>Dynamic Arrays:</strong> Dynamic arrays provide efficient indexed access to elements but are not optimized for constant-time insertions and deletions. Inserting or removing an element in the middle of a dynamic array can be slow as it requires shifting all elements after the point of insertion or removal, which can be time-consuming.
-    </p>
-
-    <p>
-        <strong>Linked Lists:</strong> Linked lists excel in constant-time insertions and deletions, especially at various positions within the list. Elements in linked lists are not stored in contiguous memory blocks, making insertions and deletions efficient by updating pointers to "relink" nodes. 
+        <strong>Dynamic Arrays:</strong> 
     </p>
 
     <p> 
-        Here's a fun fact about linked lists: some people argue that linked lists consume significantly more memory than partially filled arrays. Unlike arrays, which are allocated in a contiguous block of memory, linked list nodes are not always contiguous, leading to substantial memory wastage due to fragmentation. It's important to note that each linked list element requires an additional Node object with prev/next pointers; however, this pointer overhead is considered negligible when compared to the impact of fragmentation.
+        Dynamic arrays provide efficient indexed access to elements but are not optimized for constant-time insertions and deletions. Inserting or removing an element in the middle of a dynamic array can be slow as it requires shifting all elements after the point of insertion or removal, which can be time-consuming.
+    </p>
+
+    <p>
+        <strong>Linked Lists:</strong> 
+    </p>
+
+    <p> 
+        Linked lists excel in constant-time insertions and deletions, especially at various positions within the list. Elements in linked lists are not stored in contiguous memory blocks, making insertions and deletions efficient by updating pointers to "relink" nodes. 
+    </p>
+
+    <p> 
+        Some people argue that linked lists consume significantly more memory than partially filled arrays. Unlike arrays, which are allocated in a contiguous block of memory, linked list nodes are not always contiguous, leading to substantial memory wastage due to fragmentation. It's important to note that each linked list element requires an additional Node object with prev/next pointers; however, this pointer overhead is considered negligible when compared to the impact of fragmentation.
+    </p>
+
+    <p> 
+        Linked List also faced challenges in modern computing due to the significant gap between CPU speeds and memory access speeds. This discrepancy has been mitigated by cache systems like the L1, L2, and L3 caches, which reduce memory access costs when working with contiguous memory blocks. However, linked lists, which require accessing random memory locations, often result in cache misses and tend to perform less efficiently in practice, especially when compared to dynamic arrays that store elements in adjacent memory, ensuring better cache performance. Dynamic arrays are favored for common list sizes due to their speed and lower overhead, but it's important to note that linked lists can still be suitable in specific use cases where they outperform alternatives.
     </p>
 
     <h3> Summary </h3>
