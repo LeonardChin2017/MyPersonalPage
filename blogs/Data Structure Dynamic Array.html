@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet {
+            background-color: #000; /* Midnight background color for the code block */
+            color: #fff; /* Text color for the code */
+            padding: 10px; /* Padding around the code block */
+            border-radius: 5px; /* Rounded corners */
+            overflow: auto; /* Enable scrolling if the code exceeds the container */
+            font-size: 14px; /* Adjust font size as needed */
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .comment {
+            color: green; /* Set the text color for comments to green */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        @media (max-width: 600px) {
+            .back-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Data Structure: Dynamic Array</h1>
+            <p class="post-date">Published on Oct 1, 2021</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <p>
+            Data structures always catch my interest, and I frequently encounter or use them in my projects. In this blog, I'll start by talking about dynamic arrays. I'll save discussions about other data structures like linked lists, stacks, queues, hash tables, binary search trees, binary heaps, priority queues, graphs, and tries for later blog posts.
+        </p>
+        <h3> What is Dynamic Arrays?</h3>
+        <hr>
+        <p>
+            Dynamic arrays, also known as vector in C++，is a versatile data structures capable of holding a variable number of elements of the same data type. Unlike static arrays, dynamic arrays can expand in size by doubling their capacity when necessary. New elements can be swiftly added to the end of the dynamic array until the available space is exhausted. When additional room is needed, the underlying fixed-sized array is enlarged, which can be a costly operation due to the creation of a larger array and copying of existing elements. Other terms for dynamic arrays include array list, growable array, resizable array, and mutable array. In summary, dynamic arrays overcome the fixed size limitation of regular arrays by automatically resizing as more elements are added, eliminating the need to specify the size in advance.
+        </p>
+        <h4>Implement Dynamic Array in C++:</h4>
+        <pre class="code-snippet">
+            <code>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    <span class="comment">// Create a dynamic array using std::vector </span>
+    std::vector<int> dynamicArray;
+
+    <span class="comment">// Add elements to the dynamic array</span>
+    dynamicArray.push_back(1);
+    dynamicArray.push_back(2);
+    dynamicArray.push_back(3);
+
+    <span class="comment">// Access elements</span>
+    std::cout << "Element at index 0: " << dynamicArray[0] << std::endl;
+
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h4>Implement Dynamic Array in Python:</h4>
+        <p> Python doesn't have built-in support for traditional arrays like you'd find in languages like C or C++. However, you can create array-like structures in Python using list. It's important to note that while Python lists might seem similar to arrays, they are essentially arrays that can change in size as needed. So, list in Python are essentially dynamic arrays.</p>
+        <pre class="code-snippet">
+            <code>
+<span class="comment"># Create a dynamic array using a list</span>
+dynamic_array = []
+
+<span class="comment"># Add elements to the dynamic array</span>
+dynamic_array.append(1)
+dynamic_array.append(2)
+dynamic_array.append(3)
+
+<span class="comment"># Access elements</span>
+print("Element at index 0:", dynamic_array[0])     
+            </code>
+        </pre>
+    
+        <h3> Pros and Cons of Dynamic Array </h3>
+        <hr>
+        <h4> Pros: </h4>
+        <ol>
+            <li><strong>Dynamic Expandability and Variable Size:</strong> Dynamic arrays can increase in size as needed, making them useful when the array's size is uncertain, avoiding issues with a static array that may be too small to store data adequately. They can accommodate as many items as needed.</li>
+            <li><strong>Efficiency and Fast Lookups:</strong> Dynamic arrays are more efficient for quick element retrieval when compared to linked lists and hash tables. They allow constant-time (O(1)) access to elements, ensuring fast lookups.</li>
+            <li><strong>Manageability and Cache-friendly Memory Allocation:</strong> Dynamic arrays are easy to read and manage. You can access specific elements using their indices, simplifying maintenance compared to other data structures like linked lists and hash tables. Additionally, they provide cache-friendly memory allocation, optimizing memory usage and performance.</li>
+        </ol>
+
+        <h4> Cons: </h4>
+        <ol>
+            <li><strong>Slow Resize:</strong> Dynamic arrays can be slow to resize. When the number of elements in a dynamic array increases and resizing is needed, the entire array must be moved to a new location in memory, which can be costly in terms of time and resources.</li>
+            <li><strong>Memory Usage:</strong> Dynamic arrays can use a lot of memory. They often allocate more memory than strictly necessary to accommodate potential future elements, resulting in memory wastage.</li>
+            <li><strong>Homogeneous Elements:</strong> Dynamic arrays can only store homogeneous elements, meaning they cannot store different types of elements in the same array. To store different types of elements, a different data structure is needed.</li>
+        </ol>
+
+    <h3> Static Array vs Dynamic Array vs Linked List Usage Guidelines</h3>
+    <hr>
+    <table>
+        <tr>
+            <th>Criteria</th>
+            <th>Static Array</th>
+            <th>Dynamic Array</th>
+            <th>Linked List</th>
+        </tr>
+        <tr>
+            <td>Fixed number of elements</td>
+            <td>✓</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Efficient indexed access</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Constant-time insertions/deletions</td>
+            <td></td>
+            <td></td>
+            <td>✓</td>
+        </tr>
+        <tr>
+            <td>Dynamic sizing</td>
+            <td></td>
+            <td>✓</td>
+            <td>✓</td>
+        </tr>
+    </table>
+
+    <p><strong>Dynamic Arrays:</strong> Dynamic arrays provide efficient indexed access to elements but are not optimized for constant-time insertions and deletions. Inserting or removing an element in the middle of a dynamic array can be slow as it requires shifting all elements after the point of insertion or removal, which can be time-consuming.</p>
+
+    <p><strong>Linked Lists:</strong> Linked lists excel in constant-time insertions and deletions, especially at various positions within the list. Elements in linked lists are not stored in contiguous memory blocks, making insertions and deletions efficient by updating pointers to "relink" nodes.</p>
+
+    <h3> Summary </h3>
+    <hr>
+    <p>Dynamic arrays are preferable for fast indexed access, while linked lists are ideal when constant-time insertions and deletions are essential, such as in scenarios involving real-time computing or dynamic sizing of data structures. The choice depends on the specific needs of your application.</p>
+
+    
+
+    </div>
+</body>
+</html>
