@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet {
+            background-color: #000; /* Midnight background color for the code block */
+            color: #fff; /* Text color for the code */
+            padding: 10px; /* Padding around the code block */
+            border-radius: 5px; /* Rounded corners */
+            overflow: auto; /* Enable scrolling if the code exceeds the container */
+            font-size: 14px; /* Adjust font size as needed */
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .comment {
+            color: green; /* Set the text color for comments to green */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        @media (max-width: 600px) {
+            .back-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Data Structure: Linked List</h1>
+            <p class="post-date">Published on Oct 20, 2021</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <hr>
+        <p>
+            When I joined Continental Automotive as a software developer and took on the role of Warning Feature Responsible for a newly awarded Full Digital Cluster project, I faced the challenge of designing a feature with complex requirements from the ground up. One of the key modules within this feature required performing rapid and extensive insertion and deletion of warnings during runtime, while also allowing efficient retrieval. The number of warnings is not fixed. To meet these demands, I chose to implement a <span style="color: red;">circular doubly linked list</span> as the underlying data structure. Despite its relatively slower parsing speed at O(N) compared to a dynamic array, its O(1) time complexity for insertion and deletion was a perfect match for the essential need for a substantial volume of real-time insertion and deletion, making it the ideal choice for the Warning feature.
+        </p>
+        
+        <h2>Implementations</h2>
+        <hr>
+        <h4>Implement Linked List in C++:</h4>
+        <pre class="code-snippet">
+            <code>
+#include &lt;iostream&gt;
+
+<span class="comment"> // Define a class to represent elements in the linked list </span>
+class Node {
+public:
+    int value;
+    Node* next;
+
+    <span class="comment">// Constructor to initialize a node with a value and a reference to the next node</span>
+    Node(int val) : value(val), next(nullptr) {}
+};
+
+<span class="comment">// Define a class to manage the linked list</span>
+class LinkedList {
+public:
+    Node* head;
+
+    <span class="comment">// Constructor to initialize the linked list with a head node</span>
+    LinkedList() : head(nullptr) {}
+
+    <span class="comment">// Append a new node with a given value to the end of the list</span>
+    void append(int value) {
+        Node* new_node = new Node(value);
+        if (head == nullptr) {
+            head = new_node;
+        } else {
+            Node* current = head;
+            while (current->next != nullptr) {
+                current = current->next;
+            }
+            current->next = new_node;
+        }
+    }
+
+    <span class="comment">// Display the elements in the linked list</span>
+    void display() {
+        Node* current = head;
+        while (current != nullptr) {
+            std::cout << current->value << " ";
+            current = current->next;
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    <span class="comment">// Create a linked list instance</span>
+    LinkedList my_list;
+
+    <span class="comment">// Append elements to the linked list</span>
+    my_list.append(1);
+    my_list.append(2);
+    my_list.append(3);
+
+    <span class="comment">// Display the linked list</span>
+    my_list.display();
+
+    return 0;
+}                   
+            </code>
+        </pre>
+
+        <h4>Implement Linked List in Python:</h4>
+        <pre class="code-snippet">
+            <code>
+<span class="comment">Define a Node class to represent elements in the linked list</span>
+class Node:
+    <span class="comment">Initialize a node with a value and a reference to the next node</span>
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+<span class="comment">Define a LinkedList class to manage the linked list</span>
+class LinkedList:
+    <span class="comment">Initialize the linked list with a head node</span>
+    def __init__(self):
+        self.head = None
+
+    <span class="comment">Append a new node with a given value to the end of the list</span>
+    def append(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+
+    <span class="comment">Display the elements in the linked list</span>
+    def display(self):
+        current = self.head
+        while current is not None:
+            print(current.value, end=' ')
+            current = current.next
+        print()
+
+<span class="comment">Create a linked list instance</span>
+my_list = LinkedList()
+
+<span class="comment">Append elements to the linked list</span>
+my_list.append(1)
+my_list.append(2)
+my_list.append(3)
+
+<span class="comment">Display the linked list</span>
+my_list.display()                
+            </code>
+        </pre>
+
+
+        <p>
+            The code above shows basic examples of a list, but it can't handle the more complicated needs of my module. A circular doubly linked list would be a more suitable choice.
+        </p>
+    
+        <p>
+            A circular doubly linked list is somewhat similar to a regular doubly linked list. In a regular doubly linked list, each item knows what comes before and after it, which is useful for navigating back and forth in the list. Based on the requirements, if new warnings arise, they should be inserted at the front of the current warnings. When all the warnings have been displayed at least once, the looping begins. The placement of the warning insertion is crucial, as it can affect the order in which they are shown, especially during the looping of warnings.
+        </p>
+    
+        <p>
+            However, merely knowing the previous warnings is not sufficient. Based on the requirements, we need to continuously loop through the warnings, moving from the start of the list to the end and then starting over again. Therefore, a circular linked list is the solution. In a circular list, the last item points back to the first, creating a loop. This allows our warnings to cycle from the end back to the start of the list, which is exactly what we need.
+        </p>
+
+        <h2> Singly vs Doubly vs Cyclic Linked Lists</h2>
+        <hr>
+        <p>The table below discusses when to use singly, doubly, and circular linked lists.</p>
+        <table>
+            <tr>
+                <th>Linked List Type</th>
+                <th>Use Case</th>
+                <th>Advantages</th>
+                <th>Considerations</th>
+            </tr>
+            <tr>
+                <td>Singly Linked List</td>
+                <td>Linear data structure, forward traversal</td>
+                <td>Memory-efficient (requires one pointer per element)</td>
+                <td>Use for stacks, queues, and algorithms requiring forward traversal.</td>
+            </tr>
+            <tr>
+                <td>Doubly Linked List</td>
+                <td>Forward and backward traversal</td>
+                <td>More versatile, allows easy access to previous elements</td>
+                <td>Use for data structures like deques and when operations require both forward and backward traversal.</td>
+            </tr>
+            <tr>
+                <td>Circular Linked List</td>
+                <td>Looped data structure or cyclic resource management</td>
+                <td>Efficient for cyclic data management</td>
+                <td>Use when elements need to cycle continuously or in applications with cyclic requirements.</td>
+            </tr>
+        </table>
+            
+        <h2>Pros and Cons of Linked List: </h2>
+        <hr>
+        <h3>Pros:</h3>
+            <ol>
+                <li>Dynamic size: Linked lists can adjust their size based on the number of elements, simplifying management of list with changing sizes.</li>
+                <li>No memory waste: Linked lists do not allocate memory for unused elements, unlike arrays with fixed sizes.</li>
+                <li>No overflow or underflow problems: As long as there's enough memory, there are no concerns about running out of space when using a linked list.</li>
+                <li>Simple Implementation: Implementing a linked list is straightforward.</li>
+                <li>Insertion and deletion is constant time: Updating the "next" pointer of the previous node for insertion and deletion is efficient.</li>
+            </ol>
+
+        <h3>Cons:</h3>
+            <ol>
+                <li>Additional memory usage: Linked lists require extra memory to store pointers, and this overhead can become significant for large list.</li>
+                <li>Less effective access: Accessing items from a linked list is slower compared to arrays, particularly for elements in the middle of the list.</li>
+                <li>Complex search: Finding an element in a linked list takes up to O(n) time, making it suboptimal for search operations compared to arrays with O(1) access time.</li>
+                <li>Slower Performance: Linked lists may have slower access speeds, especially for large list.</li>
+                <li>Memory Overhead: Linked lists require additional memory to store pointers, which can be a drawback if memory usage is a concern.</li>
+                <li>Lack of Random Access: Elements at a specific index cannot be directly accessed using linked lists, resulting in O(n) time for finding the nth element.</li>
+                <li>Possible memory fragmentation: Over time, linked lists may experience memory fragmentation, potentially decreasing performance due to higher memory usage.</li>
+            </ol>
+    </div>
+</body>
+</html>

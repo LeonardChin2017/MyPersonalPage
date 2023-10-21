@@ -24,9 +24,15 @@ var blogData = [
         link: "blogs/Exploring PostgreSQL My Learning Notebook.html"
     },
     {
+        title: "Data Structure: Linked List",
+        date: "Oct 20, 2021",
+        content: "I joined Continental Automotive as a software developer and took on the role of Warning Feature Responsible for a Full Digital Cluster project. I designed a feature with complex requirements, including quick insertion and deletion of warnings during runtime. To handle this, I implemented a circular doubly linked list as the data structure.",
+        link: "blogs/Data Structure Linked List.html"
+    },
+    {
         title: "Data Structure: Dynamic Array",
         date: "Oct 1, 2021",
-        content: "Data structures always catch my interest, and I frequently encounter or use them in my projects. In this blog, I'll start by talking about dynamic arrays. I'll save discussions about other data structures like linked lists, stacks, queues, hash tables, binary search trees, binary heaps, priority queues, graphs, and tries for later blog posts.",
+        content: "I'm fascinated by data structures and often use them in my projects. In this blog, I'll begin by discussing dynamic arrays.",
         link: "blogs/Data Structure Dynamic Array.html"
     },
     {
