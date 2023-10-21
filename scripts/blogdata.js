@@ -24,6 +24,12 @@ var blogData = [
         link: "blogs/Exploring PostgreSQL My Learning Notebook.html"
     },
     {
+        title: "Data Structure",
+        date: "Oct 1, 2021",
+        content: "This blog post serves as my personal notes on what I have learned about PostgreSQL. It covers the setup process of PostgreSQL and pgadmin4 and provides a comprehensive list of SQL keywords and examples. Additionally, I compare PostgreSQL and MySQL, and discuss the distinctions between NoSQL and RDBMS.",
+        link: "blogs/Data Structure.html"
+    },
+    {
         title: "Google Singapore Office Tour",
         date: "Jan 11, 2019",
         content: "Google Singapore Office One-Day Tour.",
