@@ -108,19 +108,20 @@
     <div class="post">
         <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
         <div class="post-header">
-            <h1>Data Structure</h1>
+            <h1>Data Structure: Dynamic Array</h1>
             <p class="post-date">Published on Oct 1, 2021</p>
         </div>
 
-        <h2>Data Structures</h2>
+        <h2>Introduction</h2>
         <p>
-            Data structures always catch my interest, and I frequently encounter or use them in my projects. In this blog, I like to explore various data structures, such as dynamic arrays, linked lists, stacks, queues, hash tables, binary search trees, binary heaps, priority queues, graphs, and tries.
+            Data structures always catch my interest, and I frequently encounter or use them in my projects. In this blog, I'll start by talking about dynamic arrays. I'll save discussions about other data structures like linked lists, stacks, queues, hash tables, binary search trees, binary heaps, priority queues, graphs, and tries for later blog posts.
         </p>
-        <h3> Dyanmic Arrays </h3>
+        <h3> What is Dynamic Arrays?</h3>
         <hr>
         <p>
-            Dynamic arrays, also known as vectors in C++ or ArrayLists in Java, are versatile data structures capable of holding a variable number of elements of the same data type. Unlike static arrays, dynamic arrays can expand in size by doubling their capacity when necessary. New elements can be swiftly added to the end of the dynamic array until the available space is exhausted. When additional room is needed, the underlying fixed-sized array is enlarged, which can be a costly operation due to the creation of a larger array and copying of existing elements. Other terms for dynamic arrays include array list, growable array, resizable array, and mutable array. In summary, dynamic arrays overcome the fixed size limitation of regular arrays by automatically resizing as more elements are added, eliminating the need to specify the size in advance.
+            Dynamic arrays, also known as vector in C++，is a versatile data structures capable of holding a variable number of elements of the same data type. Unlike static arrays, dynamic arrays can expand in size by doubling their capacity when necessary. New elements can be swiftly added to the end of the dynamic array until the available space is exhausted. When additional room is needed, the underlying fixed-sized array is enlarged, which can be a costly operation due to the creation of a larger array and copying of existing elements. Other terms for dynamic arrays include array list, growable array, resizable array, and mutable array. In summary, dynamic arrays overcome the fixed size limitation of regular arrays by automatically resizing as more elements are added, eliminating the need to specify the size in advance.
         </p>
+        <h4>Implement Dynamic Array in C++:</h4>
         <pre class="code-snippet">
             <code>
 #include &lt;iostream&gt;
@@ -142,6 +143,28 @@ int main() {
 }
             </code>
         </pre>
-      </div>
+
+        <h4>Implement Dynamic Array in Python:</h4>
+        <p> Python doesn't have built-in support for traditional arrays like you'd find in languages like C or C++. However, you can create array-like structures in Python using list. It's important to note that while Python lists might seem similar to arrays, they are essentially arrays that can change in size as needed. So, list in Python are essentially dynamic arrays.</p>
+        <pre class="code-snippet">
+            <code>
+<span class="comment"># Create a dynamic array using a list</span>
+dynamic_array = []
+
+<span class="comment"># Add elements to the dynamic array</span>
+dynamic_array.append(1)
+dynamic_array.append(2)
+dynamic_array.append(3)
+
+<span class="comment"># Access elements</span>
+print("Element at index 0:", dynamic_array[0])     
+            </code>
+        </pre>
+    
+        <h3> Pros and Cons of Dynamic Array </h3>
+        <hr>
+        <h4> Pros: </h4>
+    
+    </div>
 </body>
 </html>
