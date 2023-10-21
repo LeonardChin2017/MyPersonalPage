@@ -212,9 +212,17 @@ print("Element at index 0:", dynamic_array[0])
         </tr>
     </table>
 
-    <p><strong>Dynamic Arrays:</strong> Dynamic arrays provide efficient indexed access to elements but are not optimized for constant-time insertions and deletions. Inserting or removing an element in the middle of a dynamic array can be slow as it requires shifting all elements after the point of insertion or removal, which can be time-consuming.</p>
+    <p>
+        <strong>Dynamic Arrays:</strong> Dynamic arrays provide efficient indexed access to elements but are not optimized for constant-time insertions and deletions. Inserting or removing an element in the middle of a dynamic array can be slow as it requires shifting all elements after the point of insertion or removal, which can be time-consuming.
+    </p>
 
-    <p><strong>Linked Lists:</strong> Linked lists excel in constant-time insertions and deletions, especially at various positions within the list. Elements in linked lists are not stored in contiguous memory blocks, making insertions and deletions efficient by updating pointers to "relink" nodes.</p>
+    <p>
+        <strong>Linked Lists:</strong> Linked lists excel in constant-time insertions and deletions, especially at various positions within the list. Elements in linked lists are not stored in contiguous memory blocks, making insertions and deletions efficient by updating pointers to "relink" nodes. 
+    </p>
+
+    <p> 
+        Here's a fun fact about linked lists: some people argue that linked lists consume significantly more memory than partially filled arrays. Unlike arrays, which are allocated in a contiguous block of memory, linked list nodes are not always contiguous, leading to substantial memory wastage due to fragmentation. It's important to note that each linked list element requires an additional Node object with prev/next pointers; however, this pointer overhead is considered negligible when compared to the impact of fragmentation.
+    </p>
 
     <h3> Summary </h3>
     <hr>
