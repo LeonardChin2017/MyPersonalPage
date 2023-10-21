@@ -24,10 +24,10 @@ var blogData = [
         link: "blogs/Exploring PostgreSQL My Learning Notebook.html"
     },
     {
-        title: "Data Structure",
+        title: "Data Structure: Dynamic Array",
         date: "Oct 1, 2021",
-        content: "This blog post serves as my personal notes on what I have learned about PostgreSQL. It covers the setup process of PostgreSQL and pgadmin4 and provides a comprehensive list of SQL keywords and examples. Additionally, I compare PostgreSQL and MySQL, and discuss the distinctions between NoSQL and RDBMS.",
-        link: "blogs/Data Structure.html"
+        content: "Data structures always catch my interest, and I frequently encounter or use them in my projects. In this blog, I'll start by talking about dynamic arrays. I'll save discussions about other data structures like linked lists, stacks, queues, hash tables, binary search trees, binary heaps, priority queues, graphs, and tries for later blog posts.",
+        link: "blogs/Data Structure Dynamic Array.html"
     },
     {
         title: "Google Singapore Office Tour",
