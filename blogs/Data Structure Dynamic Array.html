@@ -92,14 +92,29 @@
             padding: 8px;
             text-align: left;
         }
-        
+
         th {
             background-color: #f2f2f2;
         }
-        
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
         @media (max-width: 600px) {
-            .back-button {
-                display: block;
+            /* Adjust the table width for small screens */
+            table {
+                width: 100%; /* You can set it to 100% or any other suitable width */
+            }
+
+            /* You can also style the table for small screens, for example, make text smaller */
+            th, td {
+                font-size: 12px;
             }
         }
     </style>

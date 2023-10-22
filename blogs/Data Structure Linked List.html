@@ -82,9 +82,9 @@
         }
 
         table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 30px;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 30px;
         }
         
         th, td {
@@ -96,10 +96,16 @@
         th {
             background-color: #f2f2f2;
         }
-        
+
         @media (max-width: 600px) {
-            .back-button {
-                display: block;
+            /* Adjust the table width for small screens */
+            table {
+                width: 100%; /* You can set it to 100% or any other suitable width */
+            }
+
+            /* You can also style the table for small screens, for example, make text smaller */
+            th, td {
+                font-size: 12px;
             }
         }
     </style>
