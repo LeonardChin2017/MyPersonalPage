@@ -24,6 +24,12 @@ var blogData = [
         link: "blogs/Exploring PostgreSQL My Learning Notebook.html"
     },
     {
+        title: "Data Structure: Hash Table",
+        date: "Oct 25, 2021",
+        content: "Hash tables employ a hashing function for efficient key-to-value mapping, prioritizing time complexity. In a prior blog, I discussed the limitations of linked lists. Combining linked list with hash tables can alleviate these issues.",
+        link: "blogs/Data Structure Hash Table.html"
+    },
+    {
         title: "Data Structure: Linked List",
         date: "Oct 20, 2021",
         content: "I joined Continental Automotive as a software developer and took on the role of Warning Feature Responsible for a Full Digital Cluster project. I designed a feature with complex requirements, including quick insertion and deletion of warnings during runtime. To handle this, I implemented a circular doubly linked list as the data structure.",

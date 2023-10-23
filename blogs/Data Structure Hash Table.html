@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet {
+            background-color: #000; /* Midnight background color for the code block */
+            color: #fff; /* Text color for the code */
+            padding: 10px; /* Padding around the code block */
+            border-radius: 5px; /* Rounded corners */
+            overflow: auto; /* Enable scrolling if the code exceeds the container */
+            font-size: 14px; /* Adjust font size as needed */
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .comment {
+            color: green; /* Set the text color for comments to green */
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust the table width for small screens */
+            table {
+                width: 100%; /* You can set it to 100% or any other suitable width */
+            }
+
+            /* You can also style the table for small screens, for example, make text smaller */
+            th, td {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Data Structure: Hash Table</h1>
+            <p class="post-date">Published on Oct 25, 2021</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <hr>
+        <p>
+            Hash tables allow the mapping of keys to values by using a hashing function. The hashing function computes the index of the key, which is then mapped to a specific value. The hashing function provides the hash table with its greatest strength: the benefit of very fast access time. Thus, a hash table is a highly useful data structure, especially when time complexity is a concern in your design. In one of my previous blog, I discussed the slow access drawback of linked list. In fact, we can also combine a hash table with a linked list to retain the order of insertion while providing quick access. An example of such an implementation can be found in Java, known as LinkedHashMap.
+        </p>
+        
+        <h2>Implementations</h2>
+        <hr>
+        <h4>Implement Hash Table in C++:</h4>
+        <p> 
+            C++'s "unordered_map," introduced in C++ 11, is a powerful data structure that functions as a hash map. It stores key-value pairs, and the "unordered" part means there's no specific order for these pairs. However, they are efficiently organized using a technique called a hash table, which acts as a quick reference guide, enabling fast addition, retrieval, or removal of items from the map. In contrast to "unordered_map," there's another data structure called "map" where the order is based on the keys, which means it maintains a specific order. It's worth noting that in C++, "map" is actually implemented as a red-black tree.
+        </p>
+        <pre class="code-snippet">
+            <code>
+#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+
+int main() {
+    std::unordered_map<int, int> hashMap;
+    int arr[] = {20, 34, 56, 54, 76, 87};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    <span class="comment">// Insert elements into the hash table</span>
+    for (int i = 0; i < n; i++) {
+        hashMap[arr[i]] = arr[i];
+    }
+
+    <span class="comment">// Delete an element</span>
+    hashMap.erase(34);
+
+    <span class="comment">// Display the hash table</span>
+    for (const auto& pair : hashMap) {
+        std::cout << pair.first << " ==> " << pair.second << std::endl;
+    }
+
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h4>Implement Hash Table in Python:</h4>
+        <p>
+            Python provides a dictionary, which is a built-in hash table-like data structure, to store key-value pairs. Dictionaries themselves were introduced with the first version of Python (version 0.9.0) near the end of the second month of the year 1991. It is worth noting that starting from Python 3.7, dictionaries behave the same as LinkedHashMap in Java, where the insertion order is considered. Before Python 3.7, we had to use OrderedDict to achieve the same behavior.
+        </p>
+        <p> Please read <a href="https://docs.python.org/3.7/whatsnew/3.7.html">https://docs.python.org/3.7/whatsnew/3.7.html</a> for the changes log of Python 3.7.</p>        
+        <pre class="code-snippet">
+            <code>
+<span class="comment"># Create an empty dictionary </span>                
+hashMap = {}
+
+<span class="comment"># Input array </span>
+arr = [20, 34, 56, 54, 76, 87]
+
+<span class="comment"># Insert elements into the dictionary </span> 
+for num in arr:
+    hashMap[num] = num
+
+<span class="comment"># Delete an element </span> 
+if 34 in hashMap:
+    del hashMap[34]
+
+<span class="comment"># Display the dictionary </span>
+for key, value in hashMap.items():
+    print(f"{key} ==> {value}")
+                             
+            </code>
+        </pre>
+
+        <h2>Pros and Cons of Unordered Map</h2>
+        <hr>
+        <h3>Pros:</h3>
+        <ul>
+            <li>O(1) constant time key lookup
+                <p>Hash code of the key directly determines its storage location, allowing for constant time access without regard to the map's size.</p>
+            </li>
+            <li>O(1) constant time insertion
+                <p>Hash tables use a hash function to convert a key into a unique numerical value known as a hash code. This hash code is used to determine the index (or "bucket") where the associated value should be stored. The hashing process is very fast and doesn't depend on the size of the hash map.</p>
+            </li>
+        </ul>
+        <h3>Cons:</h3>
+        <ul>
+            <li>Without careful planning, too many insertions will trigger a "rehashing," completely rebuilding the entire underlying data structure.
+                <p>It's like if you were putting a lot of items into a backpack. If you just throw things in without any order, the backpack can get too full and heavy. In a hash map, when you add a bunch of items, there comes a point where it gets too full, and it has to do a lot of extra work to make more space. This extra work is called "rehashing," and it's like taking everything out of your backpack and finding a new, bigger one to put it all in. It's a bit like starting over. So, if you don't plan carefully and add things without thinking, it can make your system do a lot of extra work and slow things down. That's why planning is important when using data structures like hash tables.</p>
+            </li>
+            <li>Cannot iterate through the container in order:
+                <p>Imagine a big box where you can put things and label them with special keys. When you need to find something, you just look at the key and quickly grab it. This is super fast and works really well. But there's a little catch. Inside the box, the things aren't put in any order, like toys not sorted by size or color. They're just put wherever there's space. Now, let's say you want to check all the things in the box one by one. You'll be surprised because they won't come out in any particular order. It's like pulling toys out of the box in a random order. Sometimes that's okay, but if you want to take them out in a special order, like from the biggest to the smallest or the other way around, it won't work well. So, if you want to make sure things come out in the right order, like from A to Z or from 1 to 10, you might need a different box that keeps things organized. This other box is called a "map," and it takes a bit more time to find things, but it keeps them in order just the way you want.</p>
+            </li>
+        </ul>
+
+
+        <h2> When to use std::map and std::unordered_map </h2>
+        <hr>
+        <p> 
+            Use a map (ordered map) when:
+            <ul>
+                <li>The problem requires you to maintain elements in sorted order based on their keys.</li>
+                <li>You need to find the smallest or largest key quickly.</li>
+                <li>You want to iterate through elements in a specific order (e.g., ascending or descending).</li>
+                <li>The problem involves complex queries or range queries.</li>
+            </ul>
+            Use an unordered_map (hash map) when:
+            <ul>
+                <li>You need fast key-based access to elements, and the order of elements doesn't matter.</li>
+                <li>The problem doesn't require maintaining the elements in a specific order.</li>
+                <li>You need to efficiently count or track occurrences of elements.</li>
+                <li>You need to perform insertions and deletions efficiently without worrying about maintaining a specific order.</li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>
