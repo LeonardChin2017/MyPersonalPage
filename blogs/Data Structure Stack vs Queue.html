@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet {
+            background-color: #000; /* Midnight background color for the code block */
+            color: #fff; /* Text color for the code */
+            padding: 10px; /* Padding around the code block */
+            border-radius: 5px; /* Rounded corners */
+            overflow: auto; /* Enable scrolling if the code exceeds the container */
+            font-size: 14px; /* Adjust font size as needed */
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .comment {
+            color: green; /* Set the text color for comments to green */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust the table width for small screens */
+            table {
+                width: 100%; /* You can set it to 100% or any other suitable width */
+            }
+
+            /* Make text smaller for small screens */
+            th, td {
+                font-size: 12px;
+                padding: 5px; /* Reduce cell padding for small screens */
+            }
+        }
+
+        pre {
+            background-color: #000; /* Code block background color */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Data Structure: Stack vs Queue </h1>
+            <p class="post-date">Published on Oct 22, 2021</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <hr>
+        <p>
+            Queue and stack are actually concepts that describe how you manage your data in a data structure. Under the hood, they can be implemented with either an array or a linked list. A queue follows the 'First In, First Out' (FIFO) principle, while a stack follows the 'Last In, First Out' (LIFO) principle.
+        </p>
+
+        <h2> Stack:</h2>
+        <hr>
+        <p>
+            Fundamentally, whenever you need to reverse the order of elements and retrieve them in constant time, you can use a stack. A stack follows the LIFO principle, which is just a way of organizing data.
+        </p>
+
+        <h3> Applications:</h3>
+        <ol>
+            <li>Achieving the 'undo' operation in notepads.</li>
+            <li>The browser's back button uses a stack.</li>
+        </ol>
+
+        <h3> Example: </h3>
+        <p> In C++, you can use the stack library: https://cplusplus.com/reference/stack/stack/</p>
+        <p> In Python, you can use list as stack. </p>
+
+
+        <h2> Queue:</h2>
+        <hr>
+        <p>Queues are implemented using a FIFO principle.</p>
+
+        <h3> Applications:</h3>
+        <ol>
+            <li>In real life, call center phone systems use queues to hold people calling them in order until a service representative is free.</li>
+            <li>CPU scheduling and disk scheduling. When multiple processes require the CPU at the same time, various CPU scheduling algorithms are used, which are implemented using queue data structures.</li>
+            <li>Print spooling.</li>
+            <li>Breadth-First Search in a graph.</li>
+            <li>Handling interrupts in real-time systems. The interrupts are handled in the same order as they arrive, following a 'First Come, First Served' approach.</li>
+        </ol>
+
+        <h3> Example: </h3>
+        <p> 
+            In C++, you can use the queue library: https://en.cppreference.com/w/cpp/container/queue<
+            /p>
+        <p> 
+            In Python, you can use collection.deque as queue: https://docs.python.org/3/library/collections.html#deque-objects
+
+        </p>
+
+        <h2>Summary</h2>
+        <hr>
+        <p> 
+            You can use a queue when you want to retrieve items in the order you added them, and a stack when you prefer to retrieve items in the reverse order of how you added them.
+        </p>
+      
+    </div>
+</body>
+</html>

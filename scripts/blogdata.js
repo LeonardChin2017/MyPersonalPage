@@ -36,6 +36,12 @@ var blogData = [
         link: "blogs/Data Structure Hash Table.html"
     },
     {
+        title: "Data Structure: Stack vs Queue",
+        date: "Oct 22, 2021",
+        content: "Queue and stack are abstract concepts for organizing data. They can be implemented with arrays or linked lists. A queue follows the 'First In, First Out' (FIFO) principle, while a stack follows the 'Last In, First Out' (LIFO) principle.",
+        link: "blogs/Data Structure Stack vs Queue.html"
+    },
+    {
         title: "Data Structure: Linked List",
         date: "Oct 20, 2021",
         content: "I joined Continental Automotive as a software developer and took on the role of Warning Feature Responsible for a Full Digital Cluster project. I designed a feature with complex requirements, including quick insertion and deletion of warnings during runtime. To handle this, I implemented a circular doubly linked list as the data structure.",
