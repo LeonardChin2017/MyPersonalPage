@@ -24,6 +24,12 @@ var blogData = [
         link: "blogs/Exploring PostgreSQL My Learning Notebook.html"
     },
     {
+        title: "Python: List vs Tuple vs Set vs Dict",
+        date: "Oct 26, 2021",
+        content: "In Python, there are four basic data types: List, Tuple, Set, and Dictionary. These serve different purposes, so choosing the right one is important for efficient coding. This blog will explain when to use each type.",
+        link: "blogs/Data Structure List Dict Tuple Set.html"
+    },
+    {
         title: "Data Structure: Hash Table",
         date: "Oct 25, 2021",
         content: "Hash tables employ a hashing function for efficient key-to-value mapping, prioritizing time complexity. In a prior blog, I discussed the limitations of linked lists. Combining linked list with hash tables can alleviate these issues.",

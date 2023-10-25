@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            color: #000;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet {
+            background-color: #000; /* Midnight background color for the code block */
+            color: #fff; /* Text color for the code */
+            padding: 10px; /* Padding around the code block */
+            border-radius: 5px; /* Rounded corners */
+            overflow: auto; /* Enable scrolling if the code exceeds the container */
+            font-size: 14px; /* Adjust font size as needed */
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .comment {
+            color: green; /* Set the text color for comments to green */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust the table width for small screens */
+            table {
+                width: 100%; /* You can set it to 100% or any other suitable width */
+            }
+
+            /* Make text smaller for small screens */
+            th, td {
+                font-size: 12px;
+                padding: 5px; /* Reduce cell padding for small screens */
+            }
+        }
+
+        pre {
+            background-color: #000; /* Code block background color */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <a class="back-button" href="javascript:history.back()">Back to Main Page</a>
+        <div class="post-header">
+            <h1>Python: List vs Tuple vs Set vs Dict </h1>
+            <p class="post-date">Published on Oct 26, 2021</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <hr>
+        <p>
+            List, Tuple, Set, and Dictionary are fundamental data types in Python, each serving specific purposes based on the requirements of a given task. Selecting the appropriate data type is crucial as it can significantly impact execution time and memory efficiency. This blog will explore these sequence and mapping data types and their respective use cases.
+        </p>
+
+        <h2>List</h2>
+        <hr>
+        <p>
+            A list is a collection of items arranged in a specific order. You can access items in a list using numbers, like 'python_list[3]'. The time it takes for various operations with a list depends on the list's size, which we'll call 'n'. Lists function like dynamic arrays in C++, where each item has a position in the array, and the size can change. Lists are handy for storing items, even if there are duplicates, and they preserve the order of the items. Also, you can change the contents of a list after creating it (mutable).
+        </p>
+        <p>Example:</p>
+        <pre>
+            <code>
+                python_list = ['one', 2, 3.4, 'hello']
+                print(python_list)
+                print(python_list[3])
+                python_list[1] = 2
+                print(python_list)
+            </code>
+        </pre>
+        <p>Output:</p>
+        <pre>
+            <code>
+                ['one', 2, 3.4, 'hello']
+                hello
+                [2, 2, 3.4, 'hello']
+            </code>
+        </pre>
+
+        <h2>Tuple</h2>
+        <hr>
+        <p>
+            Tuples are similar to lists because they can store different data types. However, there's a key difference: tuples are immutable, which means you can't change their elements once you've assigned them. In contrast, lists are dynamic and can be modified.In simpler terms, think of a tuple as an "unchangeable" list. You can't add, remove, or replace elements in a tuple once it's created. Everything in a tuple stays the same. However, you can create a new tuple by combining two or more tuples.In Python, we typically use tuples to store data that doesn't need to change. Tuples don't have methods like "append" or "extend" for adding elements, and there are no "remove" or "pop" methods for removing elements. You can still find elements in a tuple without altering the tuple itself. You can use the "in" operator to check if an element exists in a tuple.Another advantage of tuples is that they are faster than lists. If you have a set of constant values that you'll only iterate through and never modify, using a tuple is a good choice.
+        </p>
+        <p>Example:</p>
+        <pre>
+            <code>
+                python_tuple = (1, 'raju', 28, 'abc')
+                print(python_tuple)
+                print(python_tuple[1])
+            </code>
+        </pre>
+        <p>Output:</p>
+        <pre>
+            <code>
+                (1, 'raju', 28, 'abc')
+                raju
+            </code>
+        </pre>
+
+        <h2>Set</h2>
+        <hr>
+        <p>
+            In Python, a Set is a collection that doesn't allow duplicates. It's excellent for quickly checking if something is in it (compared to lists; it's much faster), but it doesn't maintain any order. Sets are also useful for mathematical operations and removing duplicates.
+        </p>
+        <p>Example:</p>
+        <pre>
+            <code>
+                python_set_1 = {1, 2, 3}
+                print(python_set)
+                python_set_2 = set(['foo', 'bar', 'baz', 'foo', 'qux'])
+                print(python_set_2)
+            </code>
+        </pre>
+        <p>Output:</p>
+        <pre>
+            <code>
+                {1, 2, 3}
+                {'qux', 'foo', 'bar', 'baz'}
+            </code>
+        </pre>
+
+        <h2>Dictionary</h2>
+        <hr>
+        <p>
+            In Python, a dictionary functions like a hash table, associating keys with values. It serves as a key-value storage type, similar to a real dictionary where values are connected to keys. Dictionaries are changeable, enabling you to add, modify, or remove key-value pairs. Unlike lists and sets, which solely contain values, dictionaries establish relationships between keys and values. If you need an efficient way to look up values using specific keys, dictionaries are the right choice.
+        </p>
+        <p>Example:</p>
+        <pre>
+            <code>
+                python_dict = {"Nishant": 1, "Akash": 2, "Ravi": 3, "Hari": 4}
+                print(python_dict)
+                print(python_dict["Akash"])
+            </code>
+        </pre>
+        <p>Output:</p>
+        <pre>
+            <code>
+                {'Nishant': 1, 'Akash': 2, 'Ravi': 3, 'Hari': 4}
+                2
+            </code>
+        </pre>
+
+        <h2> Summary </h2>
+        <hr>
+        <p> Table below summarize the differences between the List, Tuple, Set, and Dict.</p>
+
+        <table>
+            <tr>
+              <th>Property</th>
+              <th>List</th>
+              <th>Tuple</th>
+              <th>Set</th>
+              <th>Dictionary</th>
+            </tr>
+            <tr>
+              <td>Syntax</td>
+              <td>[ ]</td>
+              <td>( )</td>
+              <td>{ }</td>
+              <td>{ }</td>
+            </tr>
+            <tr>
+              <td>Mutable/Immutable</td>
+              <td>Mutable</td>
+              <td>Immutable</td>
+              <td>Mutable</td>
+              <td>Mutable</td>
+            </tr>
+            <tr>
+              <td>Order</td>
+              <td>Ordered</td>
+              <td>Ordered</td>
+              <td>Unordered</td>
+              <td>Unordered</td>
+            </tr>
+            <tr>
+              <td>Duplicates</td>
+              <td>Allowed</td>
+              <td>Allowed</td>
+              <td>Not Allowed</td>
+              <td>Not Allowed</td>
+            </tr>
+            <tr>
+              <td>Indexing</td>
+              <td>Allowed</td>
+              <td>Allowed</td>
+              <td>Not Allowed</td>
+              <td>Allowed</td>
+            </tr>
+            <tr>
+              <td>Slicing</td>
+              <td>Allowed</td>
+              <td>Allowed</td>
+              <td>Not Allowed</td>
+              <td>Not Allowed</td>
+            </tr>
+            <tr>
+              <td>Common Operations</td>
+              <td>append(), insert(), remove(), pop(), extend()</td>
+              <td>Concatenation, unpacking, indexing, slicing</td>
+              <td>add(), remove(), union(), intersection(), difference()</td>
+              <td>keys(), values(), items(), get()</td>
+            </tr>
+            <tr>
+              <td>Applications</td>
+              <td>Storing mutable sequences of items</td>
+              <td>Storing immutable sequences of items, returning multiple values from a function</td>
+              <td>Performing set operations, removing duplicates from a list</td>
+              <td>Storing key-value pairs, providing structured access to data</td>
+            </tr>
+            <tr>
+              <td>Limitations</td>
+              <td>Slow when dealing with large lists, takes up more memory compared to tuples</td>
+              <td>Cannot add, remove or modify elements after creation</td>
+              <td>Does not preserve order, cannot store duplicates</td>
+              <td>Keys must be unique and immutable, values can be mutable or immutable</td>
+            </tr>
+          </table>
+    </div>
+</body>
+</html>
